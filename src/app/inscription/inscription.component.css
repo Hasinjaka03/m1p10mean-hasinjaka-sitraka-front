@@ -1,26 +1,56 @@
 /* inscription.component.css */
-form {
+
+/* Style pour le conteneur du formulaire */
+.inscription-container {
     max-width: 400px;
     margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
   }
   
+  /* Style pour les étiquettes */
   label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
+    font-weight: bold;
   }
   
-  input {
+  /* Style pour les champs de saisie */
+  input[type="text"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="email"],
+  select {
     width: 100%;
     padding: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Pour inclure le padding et le border dans la largeur */
   }
   
-  button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
+  /* Style pour le bouton de soumission */
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 3px;
     cursor: pointer;
+  }
+  
+  /* Style pour les messages d'erreur */
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  /* Style pour les messages de succès */
+  .success-message {
+    color: green;
+    margin-top: 5px;
   }
   
