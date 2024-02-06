@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http'; // Pour utiliser HttpCl
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

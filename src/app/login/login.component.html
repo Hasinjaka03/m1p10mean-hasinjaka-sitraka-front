@@ -1,0 +1,15 @@
+<!-- login.component.html -->
+<div class="container">
+    <div class="form-container">
+      <h2>Connexion</h2>
+      <form (submit)="login()">
+        <input type="email" name="email" [(ngModel)]="credentials.email" placeholder="Email" required>
+        <input type="password" name="motDePasse" [(ngModel)]="credentials.motDePasse" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+      </form>
+      <div class="sign-up-link">
+        <p>Pas encore inscrit ? <a routerLink="/inscription">S'inscrire</a></p>
+      </div>
+    </div>
+  </div>
+  
