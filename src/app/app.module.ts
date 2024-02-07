@@ -7,12 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { LoginComponent } from './login/login.component';
+import { EmployeListeComponent } from './employe-liste/employe-liste.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     InscriptionComponent,
-    LoginComponent
+    LoginComponent,
+    EmployeListeComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule // Importer FormsModule ici
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,10 +8,19 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   private baseUrl = 'http://localhost:3000/utilisateur';
+  private utilisateur: any; // Utilisateur connecté
 
   constructor(private http: HttpClient) { }
 
   login(credentials: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/login`, credentials);
+  }
+
+  setUtilisateur(utilisateur: any) {
+    this.utilisateur = utilisateur;
+  }
+
+  getUtilisateur() {
+    return this.utilisateur;
   }
 }

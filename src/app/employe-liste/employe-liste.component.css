@@ -1,0 +1,25 @@
+/* employe-liste.component.css */
+.employe-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .employe-table th, .employe-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .employe-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .employe-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .employe-table tbody tr:hover {
+    background-color: #ddd;
+  }
+  

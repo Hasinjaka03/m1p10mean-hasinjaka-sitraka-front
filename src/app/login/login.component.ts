@@ -1,6 +1,8 @@
 // login.component.ts
 import { Component } from '@angular/core';
 import { AuthService } from './login.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,14 +10,19 @@ import { AuthService } from './login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  credentials: any = {}; // Modèle pour stocker les informations de connexion
+  credentials = {
+    email: 'hasinjaka.kontiki@gmail.com',
+    motDePasse: 'hasinjaka'
+  }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   login() {
     this.authService.login(this.credentials).subscribe(
       response => {
         // Gérer la réponse du serveur (par exemple, stocker le token JWT dans le stockage local)
+        this.authService.setUtilisateur(response.utilisateur);
+        this.router.navigate(['/employes']);
         console.log('Réponse du serveur :', response);
       },
       error => {

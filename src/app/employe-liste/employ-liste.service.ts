@@ -6,13 +6,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class InscriptionService {
-
-  private baseUrl = 'http://localhost:3000/utilisateur/inscription'; // L'URL de votre API
+export class UtilisateurService {
+  private apiUrl = 'http://localhost:3000/utilisateur/liste';
 
   constructor(private http: HttpClient) { }
 
-  ajouterUtilisateur(utilisateur: any): Observable<any> {
-    return this.http.post(this.baseUrl, utilisateur);
+  getUtilisateurs(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }
