@@ -5,17 +5,21 @@ import { HttpClientModule } from '@angular/common/http'; // Pour utiliser HttpCl
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InscriptionComponent } from './inscription/inscription.component';
-import { LoginComponent } from './login/login.component';
+import { InscriptionComponent } from './common/inscription/inscription.component';
+import { LoginComponent } from './common/login/login.component';
 import { EmployeListeComponent } from './employe-liste/employe-liste.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CreateRendezvousComponent } from './client/create-rendezvous/create-rendezvous.component';
+import { ListeRendezvousComponent } from './client/liste-rendezvous/liste-rendezvous.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InscriptionComponent,
     LoginComponent,
-    EmployeListeComponent
+    EmployeListeComponent,
+    CreateRendezvousComponent,
+    ListeRendezvousComponent
   ],
   imports: [
     BrowserModule,

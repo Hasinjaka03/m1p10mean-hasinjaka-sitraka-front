@@ -1,6 +1,6 @@
 // inscription.component.ts
 import { Component } from '@angular/core';
-import { InscriptionService } from './inscription.service';
+import { InscriptionService } from '../../service/inscription.service';
 
 @Component({
   selector: 'app-inscription',
