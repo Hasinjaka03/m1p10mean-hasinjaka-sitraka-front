@@ -5,14 +5,14 @@
         <label for="service">Service:</label>
         <select id="service" name="service" [(ngModel)]="rendezvousData.service" required>
           <option value="">Sélectionner un service</option>
-          <option *ngFor="let service of services" [value]="service._id">{{ service.name }}</option>
+          <option *ngFor="let service of services" [value]="service._id">{{ service.nom }}</option>
         </select>
       </div>
       <div>
         <label for="employee">Employé:</label>
         <select id="employee" name="employee" [(ngModel)]="rendezvousData.employee" required>
           <option value="">Sélectionner un employé</option>
-          <option *ngFor="let employee of employees" [value]="employee._id">{{ employee.name }}</option>
+          <option *ngFor="let employee of employees" [value]="employee._id">{{ employee.nom }} {{ employee.prenom }}</option>
         </select>
       </div>
       <div>
