@@ -21,7 +21,7 @@ export class LoginComponent {
     this.authService.login(this.credentials).subscribe(
       response => {
         // Gérer la réponse du serveur (par exemple, stocker le token JWT dans le stockage local)
-        this.authService.setUtilisateur(response.utilisateur);
+        localStorage.setItem('utilisateur', JSON.stringify(response.utilisateur));
         this.router.navigate(['/employes']);
         console.log('Réponse du serveur :', response);
       },

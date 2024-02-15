@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EmployeService } from 'src/app/service/employe.service';
 import { RendezvousService } from 'src/app/service/rendezvous.service';
+import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
   selector: 'app-create-rendezvous',
   templateUrl: './create-rendezvous.component.html',
   styleUrls: ['./create-rendezvous.component.css']
 })
-export class CreateRendezvousComponent {
+export class CreateRendezvousComponent implements OnInit {
   rendezvousData = {
     client: '',
     service: '',
@@ -14,18 +16,27 @@ export class CreateRendezvousComponent {
     date: null
   };
 
+  services: any[] = []; // Liste des services
+  employees: any[] = []; // Liste des employés
+
   constructor(
-    private rendezvousService: RendezvousService
+    private rendezvousService: RendezvousService,
+    private serviceService: ServiceService,
+    private employeeService: EmployeService
   ) {}
+
+  ngOnInit() {
+    this.getServices();
+    this.getEmployees();
+  }
 
   createRendezvous() {
     // Récupérer les données du client à partir du localStorage
-    const clientDataString = localStorage.getItem('client');
+    const clientDataString = localStorage.getItem('utilisateur');
     if (clientDataString) {
       const clientData = JSON.parse(clientDataString);
-      this.rendezvousData.client = clientData.nom; // Supposant que vous stockez le nom du client dans le localStorage
+      this.rendezvousData.client = clientData; 
 
-      // Appeler le service pour créer le rendez-vous
       this.rendezvousService.createRendezvous(this.rendezvousData).subscribe(
         () => {
           console.log('Rendez-vous créé avec succès');
@@ -38,5 +49,27 @@ export class CreateRendezvousComponent {
     } else {
       console.error('Aucune donnée client trouvée dans le localStorage');
     }
+  }
+
+  getServices() {
+    this.serviceService.getServiceListe().subscribe(
+      (data: any[]) => {
+        this.services = data;
+      },
+      error => {
+        console.error('Erreur lors de la récupération de la liste des services :', error);
+      }
+    );
+  }
+
+  getEmployees() {
+    this.employeeService.getEmployeeListe().subscribe(
+      (data: any[]) => {
+        this.employees = data;
+      },
+      error => {
+        console.error('Erreur lors de la récupération de la liste des employés :', error);
+      }
+    );
   }
 }

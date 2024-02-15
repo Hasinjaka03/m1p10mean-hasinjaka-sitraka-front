@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent }, // Configurer la route pour le composant d'inscription
   { path: 'rendezvous', component: ListRendezvousComponent }, // Configurer la route pour le composant d'inscription
   { path: 'insert_rendezvous', component: CreateRendezvousComponent }, // Configurer la route pour le composant d'inscription
-  { path: 'employes', component: EmployeListeComponent, canActivate: [AuthGuard] },
+  { path: 'employes', component: EmployeListeComponent /*,canActivate: [AuthGuard] */ },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
   // Ajouter d'autres routes au besoin
 ];

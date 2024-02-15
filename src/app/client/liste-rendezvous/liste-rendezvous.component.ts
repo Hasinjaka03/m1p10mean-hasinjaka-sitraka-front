@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RendezvousService } from 'src/app/service/rendezvous.service';
 
-
 @Component({
-  selector: 'app-list-rendezvous',
-  templateUrl: './list-rendezvous.component.html',
-  styleUrls: ['./list-rendezvous.component.css']
+  selector: 'app-liste-rendezvous',
+  templateUrl: './liste-rendezvous.component.html',
+  styleUrls: ['./liste-rendezvous.component.css']
 })
 export class ListRendezvousComponent implements OnInit {
   rendezvousList: any[]=[];

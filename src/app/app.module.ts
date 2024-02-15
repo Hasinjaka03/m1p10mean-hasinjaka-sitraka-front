@@ -10,7 +10,8 @@ import { LoginComponent } from './common/login/login.component';
 import { EmployeListeComponent } from './employe-liste/employe-liste.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CreateRendezvousComponent } from './client/create-rendezvous/create-rendezvous.component';
-import { ListeRendezvousComponent } from './client/liste-rendezvous/liste-rendezvous.component';
+import { ListRendezvousComponent } from './client/liste-rendezvous/liste-rendezvous.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ListeRendezvousComponent } from './client/liste-rendezvous/liste-rendez
     LoginComponent,
     EmployeListeComponent,
     CreateRendezvousComponent,
-    ListeRendezvousComponent
+    ListRendezvousComponent
   ],
   imports: [
     BrowserModule,
