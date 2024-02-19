@@ -20,12 +20,8 @@ export class LoginComponent {
   login() {
     this.authService.login(this.credentials).subscribe(
       response => {
-<<<<<<< Updated upstream:src/app/common/login/login.component.ts
         // Gérer la réponse du serveur (par exemple, stocker le token JWT dans le stockage local)
         localStorage.setItem('utilisateur', JSON.stringify(response.utilisateur));
-=======
-        this.authService.setUtilisateur(response.utilisateur);
->>>>>>> Stashed changes:src/app/login/login.component.ts
         this.router.navigate(['/employes']);
       },
       error => {

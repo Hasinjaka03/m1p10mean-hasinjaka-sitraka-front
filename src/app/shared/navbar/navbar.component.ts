@@ -4,20 +4,19 @@ import { Router } from '@angular/router';
 import { Location} from '@angular/common';
 
 @Component({
-    moduleId: module.id,
     selector: 'navbar-cmp',
     templateUrl: 'navbar.component.html'
 })
 
 export class NavbarComponent implements OnInit{
-    private listTitles: any[];
+    private listTitles: any[] = [];
     location: Location;
     private nativeElement: Node;
-    private toggleButton;
+    private toggleButton: any;
     private sidebarVisible: boolean;
 
     public isCollapsed = true;
-    @ViewChild("navbar-cmp", {static: false}) button;
+    @ViewChild("navbar-cmp", {static: false}) button: any;
 
     constructor(location:Location, private renderer : Renderer2, private element : ElementRef, private router: Router) {
         this.location = location;

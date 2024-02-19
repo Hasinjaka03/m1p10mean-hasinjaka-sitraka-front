@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    moduleId: module.id,
     selector: 'fixedplugin-cmp',
     templateUrl: 'fixedplugin.component.html'
 })
@@ -13,7 +12,7 @@ export class FixedPluginComponent implements OnInit{
 
   public state: boolean = true;
 
-  changeSidebarColor(color){
+  changeSidebarColor(color : any){
     var sidebar = <HTMLElement>document.querySelector('.sidebar');
 
     this.sidebarColor = color;
@@ -21,7 +20,7 @@ export class FixedPluginComponent implements OnInit{
         sidebar.setAttribute('data-color',color);
     }
   }
-  changeSidebarActiveColor(color){
+  changeSidebarActiveColor(color : any){
     var sidebar = <HTMLElement>document.querySelector('.sidebar');
     this.sidebarActiveColor = color;
     if(sidebar != undefined){

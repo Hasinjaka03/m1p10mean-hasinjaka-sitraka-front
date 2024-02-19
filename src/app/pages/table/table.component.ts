@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
-declare interface TableData {
-    headerRow: string[];
-    dataRows: string[][];
+export class TableData {
+    constructor(public headerRow: string[], public dataRows: string[][]) {}
 }
 
 @Component({
     selector: 'table-cmp',
-    moduleId: module.id,
     templateUrl: 'table.component.html'
 })
 
 export class TableComponent implements OnInit{
-    public tableData1: TableData;
-    public tableData2: TableData;
+    public tableData1: TableData = new TableData([], []);
+    public tableData2: TableData = new TableData([], []);   
     ngOnInit(){
         this.tableData1 = {
             headerRow: [ 'ID', 'Name', 'Country', 'City', 'Salary'],
