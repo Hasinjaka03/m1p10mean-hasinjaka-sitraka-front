@@ -12,8 +12,11 @@ export class RendezvousService {
 
   // Fonction pour créer un nouveau rendez-vous
   createRendezvous(rendezvousData: any): Observable<any> {
+<<<<<<< Updated upstream
     // rendezvousData.service = new mongoose.Types.ObjectId(rendezvousData.service);
 
+=======
+>>>>>>> Stashed changes
     return this.http.post(`${this.baseUrl}/rendezvous`, rendezvousData);
   }
 
