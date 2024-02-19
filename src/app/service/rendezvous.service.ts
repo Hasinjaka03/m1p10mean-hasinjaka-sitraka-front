@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-const mongoose = require('mongoose');
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class RendezvousService {
 
   // Fonction pour créer un nouveau rendez-vous
   createRendezvous(rendezvousData: any): Observable<any> {
-    rendezvousData.service = new mongoose.Types.ObjectId(rendezvousData.service);
+    // rendezvousData.service = new mongoose.Types.ObjectId(rendezvousData.service);
 
     return this.http.post(`${this.baseUrl}/rendezvous`, rendezvousData);
   }
