@@ -13,7 +13,6 @@ import { CreateRendezvousComponent } from './client/create-rendezvous/create-ren
 import { ListRendezvousComponent } from './client/liste-rendezvous/liste-rendezvous.component';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
-import { ToastrModule } from 'ngx-toastr';
 import { FooterModule } from './shared/footer/footer.module';
 import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -37,7 +36,6 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     SidebarModule,
     NavbarModule,
     FixedPluginModule,
-    ToastrModule.forRoot(),
     FooterModule,
   ],
   providers: [AuthGuard],

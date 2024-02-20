@@ -25,7 +25,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
-import { ToastrModule } from 'ngx-toastr';
 import { FooterModule } from './shared/footer/footer.module';
 import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
 
@@ -49,10 +48,9 @@ export const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),
+  imports: [RouterModule.forRoot(routes,{useHash: true}),
     SidebarModule,
     NavbarModule,
-    ToastrModule.forRoot(),
     FooterModule,
     FixedPluginModule
   ],
