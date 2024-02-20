@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeService } from 'src/app/service/employe.service';
-import { RendezvousService } from 'src/app/service/rendezvous.service';
-import { ServiceService } from 'src/app/service/service.service';
+import { ServiceService } from 'app/service/service.service';
+import { EmployeService } from 'app/service/employe.service';
+import { RendezvousService } from 'app/service/rendezvous.service';
+
 
 @Component({
   selector: 'app-create-rendezvous',

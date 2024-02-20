@@ -16,6 +16,7 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     FormsModule,
     SidebarModule,
     NavbarModule,
+    ToastrModule.forRoot(),
     FixedPluginModule,
     FooterModule,
   ],

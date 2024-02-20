@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RendezvousService } from 'src/app/service/rendezvous.service';
+import { RendezvousService } from 'app/service/rendezvous.service';
+
 
 @Component({
   selector: 'app-liste-rendezvous',

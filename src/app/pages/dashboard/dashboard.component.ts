@@ -105,8 +105,6 @@ export class DashboardComponent {
           labels: [1, 2, 3],
           datasets: [{
             label: "Emails",
-            pointRadius: 0,
-            pointHoverRadius: 0,
             backgroundColor: [
               '#e3e3e3',
               '#4acccd',
