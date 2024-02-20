@@ -11,6 +11,12 @@ import { EmployeListeComponent } from './employe-liste/employe-liste.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CreateRendezvousComponent } from './client/create-rendezvous/create-rendezvous.component';
 import { ListRendezvousComponent } from './client/liste-rendezvous/liste-rendezvous.component';
+import { SidebarModule } from './sidebar/sidebar.module';
+import { NavbarModule } from './shared/navbar/navbar.module';
+import { ToastrModule } from 'ngx-toastr';
+import { FooterModule } from './shared/footer/footer.module';
+import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 
 @NgModule({
@@ -20,13 +26,19 @@ import { ListRendezvousComponent } from './client/liste-rendezvous/liste-rendezv
     LoginComponent,
     EmployeListeComponent,
     CreateRendezvousComponent,
-    ListRendezvousComponent
+    ListRendezvousComponent,
+    AdminLayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule // Importer FormsModule ici
+    FormsModule,
+    SidebarModule,
+    NavbarModule,
+    FixedPluginModule,
+    ToastrModule.forRoot(),
+    FooterModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
