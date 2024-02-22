@@ -9,14 +9,15 @@ import { InscriptionComponent } from './common/inscription/inscription.component
 import { LoginComponent } from './common/login/login.component';
 import { EmployeListeComponent } from './employe-liste/employe-liste.component';
 import { AuthGuard } from './guards/auth.guard';
-import { CreateRendezvousComponent } from './client/create-rendezvous/create-rendezvous.component';
-import { ListRendezvousComponent } from './client/liste-rendezvous/liste-rendezvous.component';
+
 import { SidebarModule } from './sidebar/sidebar.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+
 
 
 @NgModule({
@@ -25,9 +26,8 @@ import { ToastrModule } from 'ngx-toastr';
     InscriptionComponent,
     LoginComponent,
     EmployeListeComponent,
-    CreateRendezvousComponent,
-    ListRendezvousComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    ClientLayoutComponent
   ],
   imports: [
     BrowserModule,

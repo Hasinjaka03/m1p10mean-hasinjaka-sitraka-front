@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListeRendezvousComponent } from './liste-rendezvous.component';
+import { ClientLayoutComponent } from './client-layout.component';
 
-describe('ListeRendezvousComponent', () => {
-  let component: ListeRendezvousComponent;
-  let fixture: ComponentFixture<ListeRendezvousComponent>;
+describe('ClientLayoutComponent', () => {
+  let component: ClientLayoutComponent;
+  let fixture: ComponentFixture<ClientLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListeRendezvousComponent ]
+      declarations: [ ClientLayoutComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListeRendezvousComponent);
+    fixture = TestBed.createComponent(ClientLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

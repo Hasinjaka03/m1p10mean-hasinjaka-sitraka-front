@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   credentials = {
-    email: 'mirado@gmail.com',
-    motDePasse: 'mirado'
+    email: 'hasinjaka.kontiki@gmail.com',
+    motDePasse: 'hasinjaka'
   }
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -22,7 +22,7 @@ export class LoginComponent {
       response => {
         // Gérer la réponse du serveur (par exemple, stocker le token JWT dans le stockage local)
         localStorage.setItem('utilisateur', JSON.stringify(response.utilisateur));
-        this.router.navigate(['/employes']);
+        this.router.navigate(['/rendezvous']);
       },
       error => {
         console.error('Erreur lors de la connexion :', error);
