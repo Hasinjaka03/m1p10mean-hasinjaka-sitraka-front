@@ -17,6 +17,7 @@ import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 
 
@@ -40,7 +41,9 @@ import { ClientLayoutComponent } from './layouts/client-layout/client-layout.com
     FixedPluginModule,
     FooterModule,
   ],
-  providers: [AuthGuard],
+  providers: [
+    { provide: LocationStrategy, useClass: PathLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

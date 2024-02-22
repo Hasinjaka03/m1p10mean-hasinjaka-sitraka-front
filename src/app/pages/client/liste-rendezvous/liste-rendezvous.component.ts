@@ -26,4 +26,17 @@ export class ListRendezvousComponent implements OnInit {
       }
     );
   }
+
+  payerRendezvous(rendezvousId: string): void {
+    this.rendezvousService.payerRendezvous(rendezvousId).subscribe(
+    () => {
+      console.log('Rendez-vous payé');
+      // Ajoutez ici la logique de redirection vers la page de liste des rendez-vous
+    },
+    error => {
+      console.error('Erreur lors du payement du rendez-vous :', error);
+    }
+  );
+    
+  }
 }

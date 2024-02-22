@@ -19,4 +19,10 @@ export class RendezvousService {
   getRendezvousList(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/listerendezvous`);
   }
+
+  payerRendezvous(rendezvousId: string): Observable<any> {
+    return this.http.put(`${this.baseUrl}/payerRendezvous/${rendezvousId}`, {});
+  }
+
+  
 }

@@ -14,7 +14,8 @@ export class CreateRendezvousComponent implements OnInit {
     client: '',
     service: '',
     employee: '',
-    date: null
+    date: null,
+    date_payement: null
   };
 
   services: any[] = []; // Liste des services

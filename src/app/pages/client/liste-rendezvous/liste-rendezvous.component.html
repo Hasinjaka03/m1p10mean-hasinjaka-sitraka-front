@@ -22,8 +22,15 @@
               <td>{{ rendezvous.service.nom }}</td>
               <td>{{ rendezvous.employee.nom }} {{ rendezvous.employee.prenom }}</td>
               <td>{{ rendezvous.date | date }}</td>
-              <td><button class="btn btn-success">PAYER</button></td>
-            </tr>
+              <td>
+                <ng-container *ngIf="rendezvous.date_payement; else payerButton">
+                  <span class="text-success">Payé</span>
+                </ng-container>
+                <ng-template #payerButton>
+                  <button (click)="payerRendezvous(rendezvous._id)" class="btn btn-warning">PAYER</button>
+                </ng-template>
+              </td>
+                        </tr>
           </tbody>
         </table>
       </div>
