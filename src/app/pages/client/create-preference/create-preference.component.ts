@@ -20,6 +20,10 @@ export class CreatePreferenceComponent implements OnInit {
   services: any[] = []; // Liste des services
   employees: any[] = []; // Liste des employés
   type_preferences: any[] = [];
+  showServiceInput: boolean = false;
+showEmployeeInput: boolean = false;
+  
+
 
   constructor(
     private preferenceService: PreferenceService,
@@ -86,6 +90,19 @@ export class CreatePreferenceComponent implements OnInit {
   getTypePreferences(){
     this.type_preferences = ["Employe","Service"];
     
+  }
+
+  updateInputsVisibility() {
+    // Reset visibility
+    this.showServiceInput = false;
+    this.showEmployeeInput = false;
+  
+    // Update based on selected type_preference
+    if (this.preferenceData.type_preference === 'Service') {
+      this.showServiceInput = true;
+    } else if (this.preferenceData.type_preference === 'Employe') {
+      this.showEmployeeInput = true;
+    }
   }
 }
 
