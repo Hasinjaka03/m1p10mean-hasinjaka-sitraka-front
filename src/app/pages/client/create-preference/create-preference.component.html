@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card mx-auto" style="max-width: 600px;">
+    <div class="card-header">
+      <h5 class="card-title">AJOUT PREFERENCE</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="createPreference()">
+        <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+              <label for="service">Type Preference:</label>
+              <select id="type_preference" class="form-control" name="type_preference" [(ngModel)]="preferenceData.type_preference" required>
+                <option value="">Sélectionner le type de preference</option>
+                <option *ngFor="let type_preference of type_preferences" [value]="type_preference">{{ type_preference }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+            <label for="service">Service:</label>
+            <select id="service" class="form-control" name="service" [(ngModel)]="preferenceData.service" required>
+              <option value="">Sélectionner un service</option>
+              <option *ngFor="let service of services" [value]="service._id">{{ service.nom }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+          <label for="employee">Employé:</label>
+          <select id="employee" name="employee" class="form-control" [(ngModel)]="preferenceData.employee" required>
+            <option value="">Sélectionner un employé</option>
+            <option *ngFor="let employee of employees" [value]="employee._id">{{ employee.nom }} {{ employee.prenom }}</option>
+          </select>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="update ml-auto mr-auto">
+        <button class="btn btn-primary btn-round" type="submit">Ajouter Preference</button>
+      </div>
+    </div>
+      </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    

@@ -28,7 +28,8 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     LoginComponent,
     EmployeListeComponent,
     AdminLayoutComponent,
-    ClientLayoutComponent
+    ClientLayoutComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,8 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
     { path: '/insert_rendezvous',    title: 'Nouvel Rendez-vous',        icon:'nc-caps-small', class: '' },
     { path: '/rendezvous',    title: 'Liste Rendez-vous',        icon:'nc-caps-small', class: '' },
+    { path: '/liste_preference',    title: 'Liste Preference',        icon:'nc-caps-small', class: '' },
+    { path: '/insert_preference',    title: 'Ajouter Preference',        icon:'nc-caps-small', class: '' },
     // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
 ];
 

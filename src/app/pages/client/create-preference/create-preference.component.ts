@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from 'app/service/service.service';
 import { EmployeService } from 'app/service/employe.service';
-import { RendezvousService } from 'app/service/rendezvous.service';
+import { PreferenceService} from 'app/service/preference.service';
 
 
 @Component({
-  selector: 'app-create-rendezvous',
-  templateUrl: './create-rendezvous.component.html',
-  styleUrls: ['./create-rendezvous.component.css']
+  selector: 'app-create-preference',
+  templateUrl: './create-preference.component.html',
+  styleUrls: ['./create-preference.component.css']
 })
-export class CreateRendezvousComponent implements OnInit {
-  rendezvousData = {
+export class CreatePreferenceComponent implements OnInit {
+    preferenceData = {
     client: '',
     service: '',
     employee: '',
-    date: null,
-    date_payement: null
+    type_preference: ''
   };
 
   services: any[] = []; // Liste des services
   employees: any[] = []; // Liste des employés
+  type_preferences: any[] = [];
 
   constructor(
-    private rendezvousService: RendezvousService,
+    private preferenceService: PreferenceService,
     private serviceService: ServiceService,
     private employeeService: EmployeService
   ) {}
@@ -30,22 +30,30 @@ export class CreateRendezvousComponent implements OnInit {
   ngOnInit() {
     this.getServices();
     this.getEmployees();
+    this.getTypePreferences();
   }
 
-  createRendezvous() {
+  createPreference() {
     // Récupérer les données du client à partir du localStorage
     const clientDataString = localStorage.getItem('utilisateur');
     if (clientDataString) {
       const clientData = JSON.parse(clientDataString);
-      this.rendezvousData.client = clientData; 
+      this.preferenceData.client = clientData;
+      
+      if(this.preferenceData.employee==""){
+        this.preferenceData.employee=null;
+      }
+      if(this.preferenceData.service==""){
+        this.preferenceData.service=null;
+      }
 
-      this.rendezvousService.createRendezvous(this.rendezvousData).subscribe(
+      this.preferenceService.createPreference(this.preferenceData).subscribe(
         () => {
-          console.log('Rendez-vous créé avec succès');
+          console.log('Preference ajoute avec succès');
           // Ajoutez ici la logique de redirection vers la page de liste des rendez-vous
         },
         error => {
-          console.error('Erreur lors de la création du rendez-vous :', error);
+          console.error('Erreur lors de l\'ajout de preference :', error);
         }
       );
     } else {
@@ -75,8 +83,9 @@ export class CreateRendezvousComponent implements OnInit {
     );
   }
 
-  getTypePreference(){
-    const typepreferences = ["Employe","Service"];
-    return typepreferences
+  getTypePreferences(){
+    this.type_preferences = ["Employe","Service"];
+    
   }
 }
+

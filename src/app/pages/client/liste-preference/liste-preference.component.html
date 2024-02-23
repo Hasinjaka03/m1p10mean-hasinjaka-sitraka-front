@@ -1,0 +1,40 @@
+
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Liste des preferences</h2>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <tr>
+                <th>TYPE PREFERENCE</th>
+                <th>EMPLOYE</th>
+                <th>SERVICE</th>
+         
+              </tr>
+            </thead>
+            <tbody>
+              <!-- You can replace the following static data with your dynamic data -->
+              <tr *ngFor="let preference of preferenceList">
+                <td>{{ preference.type_preference }}</td>
+                <td>
+                <ng-container *ngIf="preference.employee">
+                    {{ preference.employee.nom }} {{ preference.employee.prenom }}
+                </ng-container>
+            </td>
+                <td>
+                    <ng-container *ngIf="preference.service">
+                    {{ preference.service.nom }}
+                </ng-container></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
