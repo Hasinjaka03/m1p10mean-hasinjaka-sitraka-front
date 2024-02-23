@@ -24,5 +24,9 @@ export class RendezvousService {
     return this.http.put(`${this.baseUrl}/payerRendezvous/${rendezvousId}`, {});
   }
 
+  prochainRendezvous(clientId: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/prochainRendezvous/${clientId}`, {});
+  }
+
   
 }

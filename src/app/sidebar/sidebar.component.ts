@@ -16,10 +16,10 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
     // { path: '/table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },
     // { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
-    { path: '/insert_rendezvous',    title: 'Nouvel Rendez-vous',        icon:'nc-caps-small', class: '' },
-    { path: '/rendezvous',    title: 'Liste Rendez-vous',        icon:'nc-caps-small', class: '' },
-    { path: '/liste_preference',    title: 'Liste Preference',        icon:'nc-caps-small', class: '' },
-    { path: '/insert_preference',    title: 'Ajouter Preference',        icon:'nc-caps-small', class: '' },
+    { path: '/insert_rendezvous',    title: 'Nouvel Rendez-vous',        icon:'nc-watch-time', class: '' },
+    { path: '/rendezvous',    title: 'Liste Rendez-vous',        icon:'nc-watch-time', class: '' },
+    { path: '/liste_preference',    title: 'Liste Preference',        icon:'nc-favourite-28', class: '' },
+    { path: '/insert_preference',    title: 'Ajouter Preference',        icon:'nc-favourite-28', class: '' },
     // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
 ];
 
