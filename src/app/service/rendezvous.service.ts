@@ -16,8 +16,8 @@ export class RendezvousService {
   }
 
   // Fonction pour récupérer la liste des rendez-vous
-  getRendezvousList(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/listerendezvous`);
+  getRendezvousList(clientId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/listerendezvous/${clientId}`);
   }
 
   payerRendezvous(rendezvousId: string): Observable<any> {

@@ -29,9 +29,11 @@ import { FooterModule } from './shared/footer/footer.module';
 import { FixedPluginModule } from './shared/fixedplugin/fixedplugin.module';
 import { LoginComponent } from './common/login/login.component';
 import { InscriptionComponent } from './common/inscription/inscription.component';
+import { EmployeListeComponent } from './employe-liste/employe-liste.component';
 
 export const routes: Routes = [
   // { path: '', redirectTo: 'login', pathMatch: 'full'}, 
+  { path: 'employees', component: EmployeListeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'inscription', component: InscriptionComponent},
   { path: '', component: ClientLayoutComponent, children: [{path: '',loadChildren: () => import('./layouts/client-layout/client-layout.module').then(x => x.ClientLayoutModule)}]},
