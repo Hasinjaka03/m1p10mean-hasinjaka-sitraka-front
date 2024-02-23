@@ -74,9 +74,4 @@ export class CreateRendezvousComponent implements OnInit {
       }
     );
   }
-
-  getTypePreference(){
-    const typepreferences = ["Employe","Service"];
-    return typepreferences
-  }
 }

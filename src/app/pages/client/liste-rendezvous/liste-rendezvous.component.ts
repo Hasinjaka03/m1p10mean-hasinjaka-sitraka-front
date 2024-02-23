@@ -18,7 +18,6 @@ export class ListRendezvousComponent implements OnInit {
     const clientDataString = localStorage.getItem('utilisateur');
     if (clientDataString) {
       this.clientData = JSON.parse(clientDataString);
-      console.log(this.clientData)
       this.getprochainRendezvous(this.clientData._id);
       this.getRendezvousList(this.clientData._id);
     }
