@@ -47,7 +47,7 @@
                     <td>{{ rd.service.nom }}</td>
                     <td>{{ rd.date | date : 'dd MMMM yyyy à HH:mm' }}</td>
                     <td>{{rd.etat | etat}}</td>
-                    <td><button type="button" class="btn btn-success rounded-pill">Effectuer</button></td>
+                    <td><button *ngIf="!rd.etat" (click)="termineRendezvous(rd._id)" class="btn btn-success rounded-pill">Effectuer</button></td>
                   </tr>
                   
                 </tbody>

@@ -66,4 +66,12 @@ export class RendezVousComponent implements OnInit {
     );
   }
 
+  termineRendezvous (idRendezVous:string) :void {
+    this.rendezvous_serv.updateEtatRD(this.user._id,idRendezVous).subscribe(
+      rendezvous => {this.rendezvous = rendezvous ;
+      // console.log(rendezvous);
+      // console.log(this.rendezvous);
+      });      
+  }
+
 }
