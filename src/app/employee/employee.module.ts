@@ -6,13 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { PartageModule } from '../partage/partage.module';
 import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
 import { ProfilComponent } from './profil/profil.component';
+import { EtatPipe } from '../pipes/etat.pipe';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RendezVousComponent,
-    ProfilComponent
+    ProfilComponent,
+    EtatPipe 
   
   ],
   imports: [
