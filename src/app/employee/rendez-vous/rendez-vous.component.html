@@ -1,0 +1,66 @@
+<app-header [user]="user"></app-header>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Liste des rendez-vous</h1>
+      
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">afaka asiana zavatra eto</h5>
+
+              <div class="search-bar" style="float: right;margin-right: 150px;" >
+                <form class="search-form d-flex align-items-center" method="POST" action="#">
+                  <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                  <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End Search Bar -->
+              <br><br><br>
+              <!-- Table with stripped rows -->
+              <table class="table datatable table-striped ">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Nom du client</th>
+                    <th scope="col">Telephone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Nom du service</th>
+                    <th scope="col">Date et heure du rendez-vous</th>
+                    <th scope="col">Etat</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let rd of rendezvous; let i=index" >
+                    <th scope="row">{{ i+1 }}</th>
+                    <td>mbola tss sary</td>
+                    <td>{{ rd.client.nom }} &nbsp; {{ rd.client.prenom }}</td>
+                    <td>{{ rd.client.numeroTelephone }}</td>
+                    <td>{{ rd.client.email }}</td>
+                    <td>{{ rd.service.nom }}</td>
+                    <td>{{ rd.date | date : 'dd MMMM yyyy à HH:mm' }}</td>
+                    <td>mbola tss</td>
+                    <td><button type="button" class="btn btn-success rounded-pill">Effectuer</button></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+<app-footer></app-footer>

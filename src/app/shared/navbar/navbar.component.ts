@@ -10,14 +10,15 @@ import { Location} from '@angular/common';
 })
 
 export class NavbarComponent implements OnInit{
-    private listTitles: any[];
+    
     location: Location;
     private nativeElement: Node;
-    private toggleButton;
+    private toggleButton : any;
     private sidebarVisible: boolean;
+    private listTitles!: any[];
 
     public isCollapsed = true;
-    @ViewChild("navbar-cmp", {static: false}) button;
+    @ViewChild("navbar-cmp", {static: false}) button:any;
 
     constructor(location:Location, private renderer : Renderer2, private element : ElementRef, private router: Router) {
         this.location = location;
