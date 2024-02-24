@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   deconnecte():void {
-    console.log('alefa kkkkk') ;
+    // console.log('alefa kkkkk') ;
     this.loginservice.logout(this.user.profil) ;
     this.router.navigate(['/employee/login']);
   }

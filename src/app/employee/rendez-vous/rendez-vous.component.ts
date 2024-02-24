@@ -71,7 +71,7 @@ export class RendezVousComponent implements OnInit {
       rendezvous => {this.rendezvous = rendezvous ;
       // console.log(rendezvous);
       // console.log(this.rendezvous);
-      });      
+      });
   }
 
 }

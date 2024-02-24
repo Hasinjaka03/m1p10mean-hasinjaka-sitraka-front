@@ -46,7 +46,7 @@
                     <td>{{ rd.client.email }}</td>
                     <td>{{ rd.service.nom }}</td>
                     <td>{{ rd.date | date : 'dd MMMM yyyy à HH:mm' }}</td>
-                    <td>{{rd.etat | etat}}</td>
+                    <td><strong>{{rd.etat | etat}}</strong></td>
                     <td><button *ngIf="!rd.etat" (click)="termineRendezvous(rd._id)" class="btn btn-success rounded-pill">Effectuer</button></td>
                   </tr>
                   
