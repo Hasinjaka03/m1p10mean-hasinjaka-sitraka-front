@@ -8,7 +8,16 @@ export interface RouteInfo {
     class: string;
 }
 
-export const ROUTES: RouteInfo[] = [
+export const ROUTES_MANAGER: RouteInfo[] = [
+    { path: '/insert_depense',    title: 'Ajouter Depense',        icon:'nc-favourite-28', class: '' },
+    { path: '/liste_depense',    title: 'Liste Depense',        icon:'nc-favourite-28', class: '' },
+    { path: '/liste_employe',    title: 'Liste Employe',        icon:'nc-favourite-28', class: '' },
+        // { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
+
+    // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
+];
+
+export const ROUTES_CLIENT: RouteInfo[] = [
     // { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
     // { path: '/icons',         title: 'Icons',             icon:'nc-diamond',    class: '' },
     // { path: '/maps',          title: 'Maps',              icon:'nc-pin-3',      class: '' },
@@ -23,6 +32,8 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
 ];
 
+export let ROUTES: RouteInfo[];
+
 @Component({
     selector: 'sidebar-cmp',
     templateUrl: 'sidebar.component.html',
@@ -31,6 +42,14 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
     public menuItems: any[]=[];
     ngOnInit() {
+        const clientDataString = localStorage.getItem('utilisateur');
+        const clientData = JSON.parse(clientDataString);
+        if(clientData.profil==='manager'){
+            ROUTES=ROUTES_MANAGER;
+        }
+        else{
+            ROUTES=ROUTES_CLIENT;
+        }
         this.menuItems = ROUTES.filter(menuItem => menuItem);
     }
 }

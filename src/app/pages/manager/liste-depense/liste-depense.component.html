@@ -1,0 +1,35 @@
+
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <<div class="card-header">
+            <h2 class="card-title">Liste des depenses</h2>
+          </div>
+        
+  
+  
+        <div class="card-body">
+          <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <tr>
+                <th>Date</th>
+                <th>Type_depense</th>
+                <th>Montant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- You can replace the following static data with your dynamic data -->
+              <tr *ngFor="let depense of depenseList">
+                  <td>{{ depense.date | date}}</td>
+                <td>{{ depense.type_depense}}</td>
+                <td>{{ depense.montant }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

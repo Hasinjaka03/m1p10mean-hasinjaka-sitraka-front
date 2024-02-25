@@ -1,0 +1,14 @@
+<!-- employe-liste.component.html -->
+<table class="employe-table">
+  <thead>
+    <tr>
+      <th>EMPLOYE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let utilisateur of utilisateurs">
+      <td>{{ utilisateur.nom }} {{ utilisateur.prenom }}</td>
+      <td><a routerLink="/statistique/employe/{{utilisateur._id}}">VOIR STATISTIQUE</a></td>
+    </tr>
+  </tbody>
+</table>

@@ -22,7 +22,7 @@ export class LoginComponent {
       response => {
         // Gérer la réponse du serveur (par exemple, stocker le token JWT dans le stockage local)
         localStorage.setItem('utilisateur', JSON.stringify(response.utilisateur));
-        this.router.navigate(['/rendezvous']);
+        this.router.navigate(['/']);
       },
       error => {
         console.error('Erreur lors de la connexion :', error);

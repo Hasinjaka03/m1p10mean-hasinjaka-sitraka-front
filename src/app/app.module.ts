@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InscriptionComponent } from './common/inscription/inscription.component';
 import { LoginComponent } from './common/login/login.component';
-import { EmployeListeComponent } from './employe-liste/employe-liste.component';
+import { EmployeListeComponent } from './pages/manager/employe-liste/employe-liste.component';
 import { AuthGuard } from './guards/auth.guard';
 
 import { SidebarModule } from './sidebar/sidebar.module';
@@ -18,6 +18,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { ToastrModule } from 'ngx-toastr';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { ManagerLayoutComponent } from './layouts/manager-layout/manager-layout.component';
+import { CreateDepenseComponent } from './pages/manager/create-depense/create-depense.component';
+import { ListeDepenseComponent } from './pages/manager/liste-depense/liste-depense.component';
 
 
 
@@ -26,10 +29,9 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     AppComponent,
     InscriptionComponent,
     LoginComponent,
-    EmployeListeComponent,
     AdminLayoutComponent,
     ClientLayoutComponent,
-
+    ManagerLayoutComponent
   ],
   imports: [
     BrowserModule,
