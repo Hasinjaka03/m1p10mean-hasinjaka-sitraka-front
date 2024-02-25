@@ -7,6 +7,7 @@ import { PartageModule } from '../partage/partage.module';
 import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
 import { ProfilComponent } from './profil/profil.component';
 import { EtatPipe } from '../pipes/etat.pipe';
+import { TacheEffectueComponent } from './tache-effectue/tache-effectue.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { EtatPipe } from '../pipes/etat.pipe';
     LoginComponent,
     RendezVousComponent,
     ProfilComponent,
-    EtatPipe 
+    EtatPipe,
+    TacheEffectueComponent 
   
   ],
   imports: [

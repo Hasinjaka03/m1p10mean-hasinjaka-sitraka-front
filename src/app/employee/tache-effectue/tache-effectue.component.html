@@ -1,0 +1,63 @@
+<app-header [user]="user"></app-header>
+<main id="main" class="main">
+ <!-- Top Selling -->
+ <div class="col-12">
+    <div class="card top-selling overflow-auto">
+
+      
+      <div class="card-body pb-0">
+        <h5 class="card-title">Tâches Effectués</h5>
+        <br>
+        <div class="row mb-3 selection">
+            <label class="col-sm-2 col-form-label"><strong>Date</strong></label>
+            <div class="col-sm-10">
+              <select  class="form-select" aria-label="Default select example" name = "datesearch"  [(ngModel)]="datesearch" >
+                
+                <option *ngFor="let selectione of liste_date_selection ();"  [value]="selectione" selected>{{selectione}}</option>
+                
+                <!-- <option value="2024-02-17">2024-02-17</option>
+                <option value="2024-02-16">2024-02-16</option> -->
+              </select>
+            </div>
+          </div>
+          
+          <br>
+        <table class="table table-borderless">
+          <thead>
+            <tr class="table-secondary">
+              <th scope="col">#</th>
+              <th scope="col">Nom du client</th>
+              <th scope="col">Nom du service</th>
+              <th scope="col">Durée du service</th>
+              <th scope="col">Prix</th>
+              <th scope="col">Commission</th>
+              <th scope="col">Benefice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rd of liste_tache() let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{ rd.client.nom }} &nbsp; {{ rd.client.prenom }}</td>
+                <td>{{ rd.service.nom }}</td>
+                <td>{{ rd.service.duree }}h</td>
+                <td>{{rd.service.prix}} Ar</td>
+                <td>{{rd.service.commission}} %</td>
+                <td class="fw-bold">{{rd.revenue}} Ar</td>
+            </tr>  
+            <tr class="table-primary">
+                <td class="fw-bold">Montant Total</td><td></td><td></td><td></td><td></td><td></td>
+                <td class="fw-bold" >{{total_benefice()}}Ar</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <!-- <div *ngFor="let rd of liste_date_selection (); let i=index" >
+            <p>{{ rd }}</p>
+        </div> -->
+      </div>
+
+    </div>
+  </div><!-- End Top Selling -->
+
+</main><!-- End #main -->
+<app-footer></app-footer>

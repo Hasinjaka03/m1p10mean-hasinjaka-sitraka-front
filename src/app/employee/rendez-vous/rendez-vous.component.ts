@@ -28,7 +28,7 @@ export class RendezVousComponent implements OnInit {
     }
     );
     // console.log(this.user._id);
-    // console.log(this.rendezvous);
+    //  console.log(this.rendezvous);
   }
 
   // Méthode pour formater la date au format "dd MMM yyyy HH:mm"
