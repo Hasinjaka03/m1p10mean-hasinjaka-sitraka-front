@@ -10,15 +10,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-  user : Utilisateur  ;
+  user! : Utilisateur  ;
   user_date! : string ;
+  heureDebut : Date = new Date() ;
+  heureFin : Date = new Date();
+  
   
 
   constructor(private user_serv : LoginService , private router : Router, private employe_service : EmployeService ) {
-    this.user = this.user_serv.getCurrentUser('employe');
+    
    }
 
   ngOnInit(): void {
+    this.user = this.user_serv.getCurrentUser('employe');
+    const[hoursd,minutesd] = this.user.heureDebut.split('h');
+    const[hoursf,minutesf] = this.user.heureFin.split('h');
+    this.heureDebut.setHours(parseFloat(hoursd));
+    this.heureDebut.setMinutes(parseFloat(minutesd));
+    this.heureFin.setHours(parseFloat(hoursf));
+    this.heureFin.setMinutes(parseFloat(minutesf));
   }
 
   updateDate(event: Event) {
@@ -59,7 +69,24 @@ this.user.dateNaissance = date;
       // this.router.navigate(['/employee/liste_rd']);
       // this.router.navigate(['/employee/profil_employe']);
       // console.log(this.user);
-      //  location.reload();
+      // location.reload();
+  }
+
+  onTimeChange(event: Event,heure : Date){
+    const value = (event.target as HTMLInputElement).value;
+    const[hours,minutes] = value.split(':');
+    heure.setHours(parseFloat(hours));
+    heure.setMinutes(parseFloat(minutes)) ;
+    // console.log(heure.getHours().toString() + 'h' + heure.getMinutes().toString()  );
+    // console.log(heure.getMinutes().toString());
+  }
+
+  updateHoraire () {
+    this.user.heureDebut = this.heureDebut.getHours().toString() + 'h' + this.heureDebut.getMinutes().toString();
+    this.user.heureFin = this.heureFin.getHours().toString() + 'h' + this.heureFin.getMinutes().toString() ;
+    this.updateutilisateur() ;
+    // console.log(this.user.heureDebut  );
+    // console.log(this.user.heureFin  );
   }
 
 }

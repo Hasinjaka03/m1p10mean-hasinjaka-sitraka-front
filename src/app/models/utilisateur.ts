@@ -8,6 +8,8 @@ export interface Utilisateur {
   numeroTelephone: string,
   profil: string,
   email: string,
-  motDePasse: string
+  motDePasse: string,
+  heureDebut:string,
+  heureFin:string
 }
   
