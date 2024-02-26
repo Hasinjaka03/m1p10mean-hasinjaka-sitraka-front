@@ -8,10 +8,14 @@ export class HeurePipe implements PipeTransform {
     const partieEntiere:number = Math.floor(heure); // Obtient la partie entière
     const partieDecimale:number = (heure - partieEntiere)*60; // Obtient la partie décimale
     let apres :string = '';
+    let avant :string = '';
     if(partieDecimale != 0){
-        apres = partieDecimale.toString() ;
+        apres = partieDecimale.toString() + 'min' ;
     }
-    const reponse :string =  partieEntiere.toString() + 'h' + apres ;
+    if(partieEntiere != 0){
+      avant = partieEntiere.toString() + 'h' ;
+  }
+    const reponse :string =  avant + apres ;
     return reponse;
   }
 }

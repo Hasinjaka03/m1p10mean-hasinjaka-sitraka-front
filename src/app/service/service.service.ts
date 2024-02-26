@@ -47,4 +47,9 @@ export class ServiceService {
     return this.http.delete(url);
   }
 
+  updateService(body: any,idservice : string): Observable<any> {
+    const url : string = "http://localhost:3000/manager/service/update/"+idservice ;
+    return this.http.patch(url, body);
+  }  
+
 }
