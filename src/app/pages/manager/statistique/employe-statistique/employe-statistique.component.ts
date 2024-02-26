@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Chart } from 'chart.js';
 
 
@@ -12,15 +13,16 @@ export class EmployeStatistiqueComponent {
 
   public canvas : any;
   public ctx: any;
-  public chartColor: any;
-  public chartEmail: any;
-  public chartHours: any;
+
+  constructor(private route: ActivatedRoute) { }
 
     ngOnInit(){
+      this.route.params.subscribe(params => {
+        const employeId = params['id_employe'];
+ 
+      });
  
 
-
-      
       const speedCanvas = document.getElementById("speedChart") as HTMLCanvasElement | null;
       var dataFirst = {
         data: [0, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],

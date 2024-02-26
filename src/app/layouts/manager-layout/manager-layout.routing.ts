@@ -10,5 +10,5 @@ export const ManagerLayoutRoutes: Routes = [
     { path: 'insert_depense',    component: CreateDepenseComponent },
     { path: 'liste_depense',    component: ListeDepenseComponent },
     { path: 'liste_employe',    component:  EmployeListeComponent},
-    { path: 'statistique/employe/:id',    component:  EmployeStatistiqueComponent},
+    { path: 'statistique/employe/:id_employe',    component:  EmployeStatistiqueComponent},
 ];

@@ -1,6 +1,8 @@
 // employe-liste.component.ts
 import { Component, OnInit } from '@angular/core';
 import { UtilisateurService } from './employ-liste.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-employe-liste',
@@ -10,7 +12,7 @@ import { UtilisateurService } from './employ-liste.service';
 export class EmployeListeComponent implements OnInit {
   utilisateurs: any[] = [];
 
-  constructor(private utilisateurService: UtilisateurService) { }
+  constructor(private utilisateurService: UtilisateurService,private router: Router) { }
 
   ngOnInit(): void {
     this.getUtilisateurs();
@@ -20,4 +22,5 @@ export class EmployeListeComponent implements OnInit {
     this.utilisateurService.getUtilisateurs()
       .subscribe(utilisateurs => this.utilisateurs = utilisateurs);
   }
+
 }
