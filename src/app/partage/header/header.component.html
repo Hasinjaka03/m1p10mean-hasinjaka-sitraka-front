@@ -92,14 +92,14 @@
       </li><!-- End Contact Page Nav -->
 
       <li *ngIf="user.profil==='manager'" class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" [routerLink]="['/manager/personnel']">
           <i class="bi bi-card-list"></i>
           <span>Gestion Personnel</span>
         </a>
       </li><!-- End Register Page Nav -->
 
       <li *ngIf="user.profil==='manager'" class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" [routerLink]="['/manager/service']">
           <i class="bi bi-journal-text"></i>
           <span>Gestion Service</span>
         </a>

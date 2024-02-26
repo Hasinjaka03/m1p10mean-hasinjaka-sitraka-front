@@ -81,9 +81,13 @@ this.user.dateNaissance = date;
     // console.log(heure.getMinutes().toString());
   }
 
+  padZero(num : number) : string {
+    return num<10 ? '0' + num : num.toString();
+  }
+
   updateHoraire () {
-    this.user.heureDebut = this.heureDebut.getHours().toString() + 'h' + this.heureDebut.getMinutes().toString();
-    this.user.heureFin = this.heureFin.getHours().toString() + 'h' + this.heureFin.getMinutes().toString() ;
+    this.user.heureDebut = this.padZero(this.heureDebut.getHours() )+ 'h' + this.padZero(this.heureDebut.getMinutes());
+    this.user.heureFin = this.padZero(this.heureFin.getHours()) + 'h' + this.padZero(this.heureFin.getMinutes()) ;
     this.updateutilisateur() ;
     // console.log(this.user.heureDebut  );
     // console.log(this.user.heureFin  );
