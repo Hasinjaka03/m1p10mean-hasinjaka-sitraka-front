@@ -11,6 +11,7 @@ import { CreateRendezvousComponent } from './client/create-rendezvous/create-ren
 
 
 
+
 const routes: Routes = [
   { path: 'inscription', component: InscriptionComponent },
   { path: 'login', component: LoginComponent }, // Configurer la route pour le composant d'inscription
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: 'employee',
     loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
   },
+  {
+    path: 'manager',
+    loadChildren: () => import('./manager/manager.module').then(m => m.ManagerModule)
+  }
 ];
 
 @NgModule({

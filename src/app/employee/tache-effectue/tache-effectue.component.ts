@@ -40,7 +40,7 @@ export class TacheEffectueComponent implements OnInit {
           this.rendezvous[i].daty = this.rendezvous[i].date.toString().split('T')[0];
           this.rendezvous[i].revenue =( this.rendezvous[i].service.prix * this.rendezvous[i].service.commission)/100 ;
           use = new Date(this.rendezvous[i].date.toString().split('T')[0]);
-          if(use <= datenow){
+          if(use <= datenow && this.rendezvous[i].etat === true){
               val.push(this.rendezvous[i].daty) ;
           }
       }
@@ -50,7 +50,7 @@ export class TacheEffectueComponent implements OnInit {
   liste_tache():any[]{
       const val :any[] =[];
       for(let i=0 ;i< this.rendezvous.length;i++){
-        if(this.datesearch === this.rendezvous[i].daty){
+        if(this.datesearch === this.rendezvous[i].daty && this.rendezvous[i].etat === true){
             val.push(this.rendezvous[i]) ;
         }
       }

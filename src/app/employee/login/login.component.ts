@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/employee/liste_rd']) ;
         }
         else if(utilisateu.profil === 'manager'){
-          this.router.navigate(['/inscription']) ;
+          this.router.navigate(['/manager/service']) ;
         }
       },
       (error) => {
