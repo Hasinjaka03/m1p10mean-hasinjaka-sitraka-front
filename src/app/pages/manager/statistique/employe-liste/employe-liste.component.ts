@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeService } from 'app/service/employe.service';
+import { RendezvousService } from 'app/service/rendezvous.service';
 
 
 @Component({
@@ -14,14 +15,16 @@ export class EmployeListeComponent implements OnInit {
   mois: number;
   annee: number;
   years: number[];
+  rendezvousjournalier: any[] =[];
 
-  constructor(private employeService: EmployeService,private router: Router , private route : ActivatedRoute) { }
+  constructor(private rendezvousService : RendezvousService, private employeService: EmployeService,private router: Router , private route : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.years = this.generateYears(2019, 2024);
     this.getemployees();
     this.getMoisAnnee();
     this.getAverageWorkTime();
+    this.getRendezvousJournalier();
   }
 
   getemployees(): void {
@@ -45,7 +48,6 @@ export class EmployeListeComponent implements OnInit {
   }
 
   getAverageWorkTime() {
-    console.log(this.mois,this.annee)
     this.employeService.getTempsMoyen(this.mois, this.annee).subscribe(
       averageWorkTimes => {
         this.employees.forEach(employee => {
@@ -54,13 +56,24 @@ export class EmployeListeComponent implements OnInit {
             employee.averageWorkTime = averageWorkTime.tempsMoyenTravail;
           }
         });
-
-        console.log(averageWorkTimes)
       },
       error => {
         console.error('Error fetching average work time:', error);
       }
     );
+  }
+
+  getRendezvousJournalier(){
+    this.rendezvousService.getRendezvousparjour(this.mois, this.annee).subscribe(
+      data => {
+        console.log(data)
+        this.rendezvousjournalier=data;
+      },
+      error => {
+        console.error('Error fetching average work time:', error);
+      }
+    );
+
   }
 
 }

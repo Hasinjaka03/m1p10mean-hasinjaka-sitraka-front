@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InscriptionComponent } from './common/inscription/inscription.component';
 import { LoginComponent } from './common/login/login.component';
-import { EmployeListeComponent } from './pages/manager/employe-liste/employe-liste.component';
+import { EmployeListeComponent } from './pages/manager/statistique/employe-liste/employe-liste.component';
 import { AuthGuard } from './guards/auth.guard';
 
 import { SidebarModule } from './sidebar/sidebar.module';

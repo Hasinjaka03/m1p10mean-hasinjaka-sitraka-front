@@ -27,3 +27,19 @@
     </tr>
   </tbody>
 </table>
+
+
+<table class="employe-table">
+  <thead>
+    <tr *ngFor="let rendezvousof rendezvousjournalier">
+      <th>{{ rendezvous['jour'] }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rendezvousof rendezvousjournalier">
+      <td>{{ rendezvous.count }} </td>
+      <!-- <td><a routerLink="/statistique/employe/{{employee._id}}">VOIR STATISTIQUE</a></td> -->
+    </tr>
+  </tbody>
+</table>
+
