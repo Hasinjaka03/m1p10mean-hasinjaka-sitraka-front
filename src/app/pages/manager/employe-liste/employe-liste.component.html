@@ -1,14 +1,29 @@
 <!-- employe-liste.component.html -->
+
+<form (ngSubmit)="getAverageWorkTime()">
+  <label for="mois">Mois:</label>
+  <input type="number" id="mois" name="mois" [(ngModel)]="mois" min="1" max="12" required>
+
+  <label for="annee">Année:</label>
+  <select id="annee" name="annee" [(ngModel)]="annee" required>
+    <option type="number" *ngFor="let year of years" [value]="year">{{ year }}</option>
+  </select>
+
+  <button type="submit">Valider</button>
+</form>
+
 <table class="employe-table">
   <thead>
     <tr>
       <th>EMPLOYE</th>
+      <th>TEMPS MOYEN</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let utilisateur of utilisateurs">
-      <td>{{ utilisateur.nom }} {{ utilisateur.prenom }}</td>
-      <td><a routerLink="/statistique/employe/{{utilisateur._id}}">VOIR STATISTIQUE</a></td>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.nom }} {{ employee.prenom }}</td>
+      <td>{{ employee.averageWorkTime }}</td>
+      <!-- <td><a routerLink="/statistique/employe/{{employee._id}}">VOIR STATISTIQUE</a></td> -->
     </tr>
   </tbody>
 </table>

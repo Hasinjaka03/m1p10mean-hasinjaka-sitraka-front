@@ -1,7 +1,7 @@
 // employe-liste.component.ts
 import { Component, OnInit } from '@angular/core';
-import { UtilisateurService } from './employ-liste.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { EmployeService } from 'app/service/employe.service';
 
 
 @Component({
@@ -10,17 +10,57 @@ import { Router } from '@angular/router';
   styleUrls: ['./employe-liste.component.css']
 })
 export class EmployeListeComponent implements OnInit {
-  utilisateurs: any[] = [];
+  employees: any[] = [];
+  mois: number;
+  annee: number;
+  years: number[];
 
-  constructor(private utilisateurService: UtilisateurService,private router: Router) { }
+  constructor(private employeService: EmployeService,private router: Router , private route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getUtilisateurs();
+    this.years = this.generateYears(2019, 2024);
+    this.getemployees();
+    this.getMoisAnnee();
+    this.getAverageWorkTime();
   }
 
-  getUtilisateurs(): void {
-    this.utilisateurService.getUtilisateurs()
-      .subscribe(utilisateurs => this.utilisateurs = utilisateurs);
+  getemployees(): void {
+    this.employeService.getEmployeeListe()
+      .subscribe(employees => this.employees = employees);
+  }
+
+  getMoisAnnee(){
+    this.route.params.subscribe(params => {
+      this.mois = params['mois'] ? +params['mois'] : 2; 
+      this.annee = params['annee'] ? +params['annee'] : 2024; 
+    });
+  }
+
+  generateYears(start: number, end: number): number[] {
+    const years = [];
+    for (let year = start; year <= end; year++) {
+      years.push(year);
+    }
+    return years;
+  }
+
+  getAverageWorkTime() {
+    console.log(this.mois,this.annee)
+    this.employeService.getTempsMoyen(this.mois, this.annee).subscribe(
+      averageWorkTimes => {
+        this.employees.forEach(employee => {
+          const averageWorkTime = averageWorkTimes.find(item => item.employe === employee._id);
+          if (averageWorkTime) {
+            employee.averageWorkTime = averageWorkTime.tempsMoyenTravail;
+          }
+        });
+
+        console.log(averageWorkTimes)
+      },
+      error => {
+        console.error('Error fetching average work time:', error);
+      }
+    );
   }
 
 }

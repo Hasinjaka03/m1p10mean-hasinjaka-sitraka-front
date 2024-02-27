@@ -12,7 +12,7 @@ const apiUrl = environment.apiUrl;
 })
 export class EmployeService {
 
-  private baseUrl = apiUrl + '/utilisateur'; // L'URL de votre API
+  private baseUrl = apiUrl + '/manager'; // L'URL de votre API
 
   constructor(private http: HttpClient) { }
 
@@ -22,5 +22,9 @@ export class EmployeService {
 
   statistiqueEmploye(id_employe: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/statistique/employe/${id_employe}`);
+  }
+
+  getTempsMoyen(mois: number, annee: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/statistique/employes/temps_moyen?mois=${mois}&annee=${annee}`);
   }
 }
