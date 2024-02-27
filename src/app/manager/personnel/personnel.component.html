@@ -9,15 +9,23 @@
       <!-- Horizontal Form -->
       <form (submit)="submitForm()" #insertionForm ="ngForm" >
         <div class="row mb-3">
-            <label for="profileImage" class="col-sm-3 col-form-label">Profile Image</label>
+            <label  class="col-sm-3 col-form-label">Image</label>
             <div class="col-sm-8">
-              <img src="assets/assets/img/profile-img.jpg" alt="Profile">
-              <div class="pt-2">
-                <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
-              </div>
+            <div
+                class="drop-area" 
+                (dragover)="onDragOver($event)"
+                (dragenter)="onDragEnter($event)"
+                (dragleave)="onDragLeave($event)"
+                (drop)="onDrop($event)"
+            >
+            <p *ngIf="!imageUrl">Drag and drop your image here</p>
+            <img *ngIf="imageUrl" [src]="imageUrl" alt="Uploaded Image" class="image-class" />
             </div>
-          </div>
+            <div class="pt-2">
+                <a href="#" (click)="removePhoto($event)" class="btn btn-danger btn-sm" title="Remove the profile image"><i class="bi bi-trash"></i></a>
+            </div>
+            </div>
+        </div>
         <div class="row mb-3">
           <label for="inputText1" class="col-sm-3 col-form-label">Nom</label>
           <div class="col-sm-8">
@@ -103,7 +111,8 @@
         <tbody>
           <tr *ngFor="let employe of employes; let i=index">
             <th scope="row">{{i+1}}</th>
-            <td>mbola  tss</td>
+            <td *ngIf="!employe.photo"><img src="assets/assets/img/default-avatar.png" alt="Profile" class="tab-image"></td>
+            <td *ngIf="employe.photo"><img  [src]="employe.photo" alt="Uploaded Image" class="tab-image" /></td>
             <td>{{employe.nom}} &nbsp; {{employe.prenom}}</td>
             <td>{{employe.dateNaissance | date: 'dd MMMM yyyy' }}</td>
             <td>{{employe.numeroTelephone}}</td>

@@ -15,7 +15,7 @@ export class ProfilComponent implements OnInit {
   heureDebut : Date = new Date() ;
   heureFin : Date = new Date();
   
-  
+  imageUrl: string | ArrayBuffer | null = null;
 
   constructor(private user_serv : LoginService , private router : Router, private employe_service : EmployeService ) {
     
@@ -29,6 +29,7 @@ export class ProfilComponent implements OnInit {
     this.heureDebut.setMinutes(parseFloat(minutesd));
     this.heureFin.setHours(parseFloat(hoursf));
     this.heureFin.setMinutes(parseFloat(minutesf));
+    this.imageUrl = this.user.photo ;
   }
 
   updateDate(event: Event) {
@@ -61,6 +62,7 @@ this.user.dateNaissance = date;
 
   updateutilisateur() {
       // console.log(this.user);
+      this.user.photo = this.imageUrl ;
       this.employe_service.updateEmployeById(this.user).subscribe(
           (utilisateur) => {this.user = utilisateur ;
             localStorage.removeItem("employe") ;
@@ -91,6 +93,48 @@ this.user.dateNaissance = date;
     this.updateutilisateur() ;
     // console.log(this.user.heureDebut  );
     // console.log(this.user.heureFin  );
+  }
+
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  onDragEnter(event: DragEvent) {
+    event.preventDefault();
+    event.stopPropagation();
+    // Ajouter des styles de survol si nécessaire
+  }
+
+  onDragLeave(event: DragEvent) {
+    event.preventDefault();
+    event.stopPropagation();
+    // Supprimer les styles de survol si nécessaire
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    event.stopPropagation();
+    const file = event.dataTransfer?.files?.[0];
+    if (file) {
+      this.handleFile(file);
+      // console.log(this.imageUrl) ;
+    }
+  }
+
+  handleFile(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imageUrl = reader.result as string;
+      // console.log(this.imageUrl) ;
+    };
+    
+    reader.readAsDataURL(file);
+  }
+
+  removePhoto(event:Event):void{
+    event.preventDefault() ;
+    this.imageUrl = null ;
   }
 
 }

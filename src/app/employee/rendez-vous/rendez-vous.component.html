@@ -40,7 +40,9 @@
                 <tbody>
                   <tr *ngFor="let rd of filterFriendItems(); let i=index" >
                     <th scope="row">{{ i+1 }}</th>
-                    <td>mbola tss sary</td>
+              
+                    <td *ngIf="!rd.client.photo"><img src="assets/assets/img/default-avatar.png" alt="Profile" class="tab-image"></td>
+                    <td *ngIf="rd.client.photo"><img  [src]="rd.client.photo" alt="Profile" class="tab-image" /></td>
                     <td>{{ rd.client.nom }} &nbsp; {{ rd.client.prenom }}</td>
                     <td>{{ rd.client.numeroTelephone }}</td>
                     <td>{{ rd.client.email }}</td>

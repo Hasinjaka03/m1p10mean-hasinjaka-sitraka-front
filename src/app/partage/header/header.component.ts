@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   // user : Utilisateur ;
   @Input() user! : Utilisateur  ;
+  isvue : boolean = true ;
 
   constructor( private loginservice : LoginService,private router : Router ) {
     // this.user =  user_serv.getCurrentUser('') ; user_serv : LoginService  
@@ -25,6 +26,11 @@ export class HeaderComponent implements OnInit {
     // console.log('alefa kkkkk') ;
     this.loginservice.logout(this.user.profil) ;
     this.router.navigate(['/employee/login']);
+  }
+
+  menus():void{
+    this.isvue=!this.isvue ;
+     
   }
 
 }

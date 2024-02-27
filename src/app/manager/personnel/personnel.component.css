@@ -5,3 +5,20 @@
 .color_text {
     color: blue;
 }
+
+.drop-area {
+    width: 150px; 
+    height: 150px; 
+    border: 2px dashed gray;
+    /* margin-left: 12px; */
+}
+.image-class {
+    width: 150px; 
+    height: 150px;
+    /* margin-right: 6px; */
+    /* border: 2px ;  */
+}
+.tab-image {
+    width: 100px; 
+    height: 100px;
+}

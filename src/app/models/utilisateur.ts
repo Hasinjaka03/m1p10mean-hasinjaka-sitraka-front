@@ -11,5 +11,6 @@ export interface Utilisateur {
   motDePasse: string,
   heureDebut:string,
   heureFin:string
+  photo:string  | ArrayBuffer | null
 }
   

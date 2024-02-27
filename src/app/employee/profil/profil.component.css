@@ -1,0 +1,14 @@
+.drop-area {
+    width: 150px; 
+    height: 150px; 
+    border: 2px dashed gray;
+}
+
+.profile .profile-edit img {
+    max-width: 150px;
+}
+
+.image-class {
+    width: 150px; 
+    height: 150px;
+}

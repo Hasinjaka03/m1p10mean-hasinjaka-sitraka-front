@@ -13,7 +13,9 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="assets/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+              <!-- <img src="assets/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> -->
+              <img *ngIf="!user.photo" src="assets/assets/img/default-avatar.png" alt="Profile" class="rounded-circle">
+              <img *ngIf="user.photo" [src]="user.photo" alt="Profile" class="rounded-circle" />
               <h2>{{ user.nom }} &nbsp; {{ user.prenom }}</h2>
               <h3>{{ user.profil }}</h3>
               <h3>Horaire de travail : {{ user.heureDebut }} &nbsp; à &nbsp; {{ user.heureFin }}</h3>
@@ -94,16 +96,25 @@
 
                   <!-- Profile Edit Form -->
                   <form (submit)="updateutilisateur()" #updateForm="ngForm">
+                    
                     <div class="row mb-3">
-                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                      <label  class="col-md-4 col-lg-3 col-form-label">Profil Image</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="assets/assets/img/profile-img.jpg" alt="Profil  e">
-                        <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
-                        </div>
+                      <div
+                          class="drop-area" 
+                          (dragover)="onDragOver($event)"
+                          (dragenter)="onDragEnter($event)"
+                          (dragleave)="onDragLeave($event)"
+                          (drop)="onDrop($event)"
+                      >
+                      <p *ngIf="!imageUrl">Drag and drop your image here</p>
+                      <img *ngIf="imageUrl" [src]="imageUrl" alt="Profile image" class="image-class" />
                       </div>
-                    </div>
+                      <div class="pt-2">
+                          <a href="#" (click)="removePhoto($event)" class="btn btn-danger btn-sm" title="Remove the profile image"><i class="bi bi-trash"></i></a>
+                      </div>
+                      </div>
+                  </div>
 
                     <div class="row mb-3">
                       <label for="nom" class="col-md-4 col-lg-3 col-form-label">Nom</label>
