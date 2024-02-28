@@ -16,7 +16,8 @@ export class EmployeListeComponent implements OnInit {
   annee: number;
   years: number[];
   rendezvousjournalier: any[] =[];
-  chiffreaffaires: any[]=[];
+  chiffreaffairejours: any[]=[];
+  chiffreaffairemois: any[]=[];
 
   constructor(private rendezvousService : RendezvousService, private employeService: EmployeService,private router: Router , private route : ActivatedRoute) { }
 
@@ -26,7 +27,8 @@ export class EmployeListeComponent implements OnInit {
     this.getMoisAnnee();
     this.getAverageWorkTime();
     this.getRendezvousJournalier();
-    this.getChiffreAffaire();
+    this.getChiffreAffaireJour();
+    this.getChiffreAffaireMois();
   }
 
   getemployees(): void {
@@ -68,7 +70,6 @@ export class EmployeListeComponent implements OnInit {
   getRendezvousJournalier(){
     this.rendezvousService.getRendezvousparjour(this.mois, this.annee).subscribe(
       data => {
-        console.log(data)
         this.rendezvousjournalier=data;
       },
       error => {
@@ -77,11 +78,21 @@ export class EmployeListeComponent implements OnInit {
     );
   }
 
-  getChiffreAffaire(){
-    this.rendezvousService.getChiffreAffaire(this.mois, this.annee).subscribe(
+  getChiffreAffaireJour(){
+    this.rendezvousService.getChiffreAffaire(this.mois.toString(), this.annee).subscribe(
+      data => {
+        this.chiffreaffairejours=data;
+      },
+      error => {
+        console.error('Error fetching chiffre affaire time:', error);
+      }
+    );
+  }
+  getChiffreAffaireMois(){
+    this.rendezvousService.getChiffreAffaire('', this.annee).subscribe(
       data => {
         console.log(data)
-        this.chiffreaffaires=data;
+        this.chiffreaffairemois=data;
       },
       error => {
         console.error('Error fetching chiffre affaire time:', error);
@@ -92,7 +103,8 @@ export class EmployeListeComponent implements OnInit {
   updatestat(){
     this.getAverageWorkTime();
     this.getRendezvousJournalier();
-    this.getChiffreAffaire();
+    this.getChiffreAffaireJour();
+    this.getChiffreAffaireMois();
   }
 
 }
