@@ -76,4 +76,9 @@ export class EmployeListeComponent implements OnInit {
 
   }
 
+  updatestat(){
+    this.getAverageWorkTime();
+    this.getRendezvousJournalier();
+  }
+
 }
