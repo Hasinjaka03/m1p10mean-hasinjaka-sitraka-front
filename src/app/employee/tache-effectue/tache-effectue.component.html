@@ -11,15 +11,11 @@
         <div class="row mb-3 selection">
             <label class="col-sm-2 col-form-label"><strong>Date</strong></label>
             <div class="col-sm-10">
-              <select  class="form-select" aria-label="Default select example" name = "datesearch"  [(ngModel)]="datesearch" >
-                
+              <select  class="form-select" aria-label="Default select example" name = "datesearch"  [(ngModel)]="datesearch" >               
                 <option *ngFor="let selectione of liste_date_selection ();"  [value]="selectione" selected>{{selectione}}</option>
-                
-                <!-- <option value="2024-02-17">2024-02-17</option>
-                <option value="2024-02-16">2024-02-16</option> -->
               </select>
             </div>
-          </div>
+        </div>
           
           <br>
         <table class="table table-borderless">

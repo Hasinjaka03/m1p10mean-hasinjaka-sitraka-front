@@ -1,3 +1,17 @@
 .longeur{
     width: 600px;
 }
+
+@media (max-width:600px)  {
+    .longeur {
+        width: 100%;
+    }
+    
+}
+/* 
+@media (min-width:100px)  {
+    .longeur {
+        width: 50%;
+    }
+    
+} */

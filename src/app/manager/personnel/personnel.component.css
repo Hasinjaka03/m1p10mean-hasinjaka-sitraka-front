@@ -2,6 +2,13 @@
     width: 700px;
 }
 
+@media (max-width:700px)  {
+    .width_form {
+        width: 100%;
+    }
+    
+}
+
 .color_text {
     color: blue;
 }

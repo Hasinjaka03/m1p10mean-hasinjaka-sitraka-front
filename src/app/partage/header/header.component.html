@@ -38,12 +38,10 @@
                 <span>My Profile</span>
               </a>
             </li>
+            
             <li>
               <hr class="dropdown-divider">
             </li>
-
-
-            
             <li>
               <a class="dropdown-item d-flex align-items-center" (click)="deconnecte()">
                 <i class="bi bi-box-arrow-right"></i>
@@ -60,13 +58,13 @@
   </header><!-- End Header -->
 
 
-   <!-- ======= Sidebar ======= *ngIf="isvue===true"-->
+   <!-- ======= Sidebar ======= *ngIf="isvue===true" id="sidebar" -->
    <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li *ngIf="user.profil==='manager'" class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" >
           <i class="bi bi-grid"></i>
           <span>Statistiques</span>
         </a>

@@ -29,8 +29,8 @@ export class HeaderComponent implements OnInit {
   }
 
   menus():void{
-    this.isvue=!this.isvue ;
-     
+    // this.isvue=!this.isvue ;
+     document.body.classList.toggle('toggle-sidebar');
   }
 
 }

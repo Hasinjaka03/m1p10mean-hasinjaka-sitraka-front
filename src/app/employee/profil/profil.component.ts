@@ -17,6 +17,8 @@ export class ProfilComponent implements OnInit {
   
   imageUrl: string | ArrayBuffer | null = null;
 
+  isshow :boolean = true ;
+
   constructor(private user_serv : LoginService , private router : Router, private employe_service : EmployeService ) {
     
    }
@@ -30,6 +32,13 @@ export class ProfilComponent implements OnInit {
     this.heureFin.setHours(parseFloat(hoursf));
     this.heureFin.setMinutes(parseFloat(minutesf));
     this.imageUrl = this.user.photo ;
+  }
+
+  cliqueAutre ():void {
+    this.isshow = false ;
+  }
+  cliqueShow ():void {
+    this.isshow = true ;
   }
 
   updateDate(event: Event) {
@@ -72,6 +81,7 @@ this.user.dateNaissance = date;
       // this.router.navigate(['/employee/profil_employe']);
       // console.log(this.user);
       // location.reload();
+      // this. showProfile ('profile-edit') ;
   }
 
   onTimeChange(event: Event,heure : Date){
@@ -93,6 +103,7 @@ this.user.dateNaissance = date;
     this.updateutilisateur() ;
     // console.log(this.user.heureDebut  );
     // console.log(this.user.heureFin  );
+    // this.showProfile ('profile-change-horaire') ;
   }
 
   onDragOver(event: DragEvent) {
@@ -135,6 +146,16 @@ this.user.dateNaissance = date;
   removePhoto(event:Event):void{
     event.preventDefault() ;
     this.imageUrl = null ;
+  }
+
+  showProfile (id : string):void {
+      const profileElement = document.getElementById('profile-overview');
+      profileElement?.classList.add('show', 'active') ;
+      const use = document.getElementById(id);
+      use?.classList.remove('show', 'active') ;
+      const usee : string = 'button[data-bs-target="#'+id+'"]';
+      const tabbutton = document.querySelector(usee);
+      tabbutton?.classList.remove('active');
   }
 
 }
