@@ -47,3 +47,21 @@
   </tbody>
 </table>
 
+
+<h3>Chiffre d'affaire</h3>
+<table class="employe-table">
+  <thead>
+    <tr>
+      <th>Jour</th>
+      <th *ngFor="let chiffreaffaire of chiffreaffaires">{{ chiffreaffaire.jour }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >
+      <td>Montant</td>
+      <td *ngFor="let chiffreaffaire of chiffreaffaires">{{ chiffreaffaire.chiffreaffaire }} </td>
+      <!-- <td><a routerLink="/statistique/employe/{{employee._id}}">VOIR STATISTIQUE</a></td> -->
+    </tr>
+  </tbody>
+</table>
+
