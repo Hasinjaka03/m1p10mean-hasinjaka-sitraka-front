@@ -14,6 +14,7 @@ import { EmployeStatistiqueComponent } from 'app/pages/manager/statistique/emplo
 import { ServiceComponent } from 'app/pages/manager/services/service.component';
 import { PersonnelComponent } from 'app/pages/manager/personnel/personnel.component';
 import { ContactComponent } from 'app/pages/manager/contact/contact.component';
+import { PartageModule } from 'app/partage/partage.module';
 
 
 
@@ -23,7 +24,8 @@ import { ContactComponent } from 'app/pages/manager/contact/contact.component';
     CommonModule,
     RouterModule.forChild(ManagerLayoutRoutes),
     FormsModule,
-    NgbModule
+    NgbModule,
+    PartageModule
   ],
   declarations: [
     ListeDepenseComponent,
