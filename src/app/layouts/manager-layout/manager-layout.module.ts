@@ -11,6 +11,9 @@ import { ListeDepenseComponent } from 'app/pages/manager/liste-depense/liste-dep
 import { CreateDepenseComponent } from 'app/pages/manager/create-depense/create-depense.component';
 import { EmployeListeComponent } from 'app/pages/manager/statistique/employe-liste/employe-liste.component';
 import { EmployeStatistiqueComponent } from 'app/pages/manager/statistique/employe-statistique/employe-statistique.component';
+import { ServiceComponent } from 'app/pages/manager/services/service.component';
+import { PersonnelComponent } from 'app/pages/manager/personnel/personnel.component';
+import { ContactComponent } from 'app/pages/manager/contact/contact.component';
 
 
 
@@ -26,7 +29,10 @@ import { EmployeStatistiqueComponent } from 'app/pages/manager/statistique/emplo
     ListeDepenseComponent,
     CreateDepenseComponent,
     EmployeListeComponent,
-    EmployeStatistiqueComponent
+    EmployeStatistiqueComponent,
+    ServiceComponent,
+    PersonnelComponent,
+    ContactComponent
   ]
 })
 
