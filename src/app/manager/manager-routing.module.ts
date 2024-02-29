@@ -4,6 +4,7 @@ import { LoginComponent } from "../employee/login/login.component";
 import { ServiceComponent } from "./services/service.component";
 import { PersonnelComponent } from "./personnel/personnel.component";
 import { ContactComponent } from "./contact/contact.component";
+// import { SweetAlert2Module } from "sweetalert2/dist/sweetalert2.min.js"
 
 const routes : Routes = [
     {path:'', redirectTo: 'login'},

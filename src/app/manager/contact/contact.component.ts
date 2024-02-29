@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Utilisateur } from 'src/app/models/utilisateur';
 import { ClientService } from 'src/app/service/client.service';
 import { LoginService } from 'src/app/service/login-admin.service';
+import { OffrespecService } from 'src/app/service/offrespec.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
@@ -13,8 +15,9 @@ export class ContactComponent implements OnInit {
   user!: Utilisateur;
   clients : any[] = [] ;
   insertEmail : any = {} ;
+  message : boolean = false ;
   
-  constructor(private user_serv : LoginService , private client_serv : ClientService) { 
+  constructor(private user_serv : LoginService , private client_serv : ClientService , private offre_serv : OffrespecService) { 
     // if(this.clients.length > 0){
     //   this.insertEmail.clientmail = this.clients[0]._id ;
     // }  
@@ -42,6 +45,46 @@ export class ContactComponent implements OnInit {
 
   submitForm() {
     console.log(this.clientById(this.insertEmail.clientmail));
+    this.insertEmail.client = this.clientById(this.insertEmail.clientmail) ;
+    this.insertEmail.date_envoi = new Date() ;
+    //  this.offre_serv.ajouterOffre(this.insertEmail).subscribe(  
+    // );
+    
+    Swal.fire({
+      title: 'Chargement en cours...',
+      html :'<div class="spinner-border" role="status"></div>',
+      allowOutsideClick:false,
+      showConfirmButton: false,
+      didOpen: () => {
+        setTimeout(() => {
+          this.offre_serv.ajouterOffre(this.insertEmail).subscribe(  
+            (response) => {
+              this.message = response.success ;
+              // console.log(response.statut);
+            }
+          );
+          const success = this.message ;
+          Swal.close() ;
+
+          if (success) {
+            Swal.fire({
+              title:'Succès!',
+              text: 'L\'ajout d\'offre spéciale a été effectuée avec succés.',
+              icon:'success',
+              showConfirmButton: true
+            });
+          } else {
+            Swal.fire({
+              title:'Erreur!',
+              text: 'Une erreur s\'est produit lors de l\'opération.',
+              icon:'error',
+              showConfirmButton: true
+            });
+          }
+        },5000);
+      }
+    
+    });
   }
 
 }
