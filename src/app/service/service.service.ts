@@ -35,4 +35,25 @@ export class ServiceService {
   //   ];
   // return of(services);
   }
+
+  getListeService() : Observable<any[]> {
+    const url : string = "http://localhost:3000/manager/service/getAll" ;
+    return this.http.get<any[]>(url);
+  }
+
+  ajoutService(body: any): Observable<any> {
+    const url : string = "http://localhost:3000/manager/service/create" ;
+    return this.http.post(url, body);
+  }
+
+  deleteService(idservice : string): Observable<any> {
+    const url : string = "http://localhost:3000/manager/service/delete/"+idservice ;
+    return this.http.delete(url);
+  }
+
+  updateService(body: any,idservice : string): Observable<any> {
+    const url : string = "http://localhost:3000/manager/service/update/"+idservice ;
+    return this.http.patch(url, body);
+  }  
+
 }

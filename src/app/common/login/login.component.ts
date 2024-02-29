@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   credentials = {
-    email: 'hasinjaka.kontiki@gmail.com',
+    email: 'hasinjaka@gmail.com',
     motDePasse: 'hasinjaka'
   }
 

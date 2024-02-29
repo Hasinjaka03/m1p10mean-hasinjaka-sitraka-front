@@ -1,0 +1,126 @@
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <div  class="logo d-flex align-items-center">
+        <img src="assets/assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">SALON DE BEAUTE</span>
+      </div>
+      <i class="bi bi-list toggle-sidebar-btn" (click)="menus()"></i>
+    </div><!-- End Logo click()="menus()"-->
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <!-- <img src="assets/assets/img/default-avatar.png" alt="Profile" class="rounded-circle"> -->
+            <img *ngIf="!user.photo" src="assets/assets/img/default-avatar.png" alt="Profile" class="rounded-circle">
+            <img *ngIf="user.photo" [src]="user.photo" alt="Profile" class="rounded-circle" />
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{ user.nom }}</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>{{ user.nom }} &nbsp; {{ user.prenom }}</h6>
+              <span>{{ user.profil }}</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li *ngIf="user.profil==='employe'">
+              <a class="dropdown-item d-flex align-items-center" [routerLink]="['/employee/profil_employe']">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" (click)="deconnecte()">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+
+   <!-- ======= Sidebar ======= *ngIf="isvue===true" id="sidebar" -->
+   <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li *ngIf="user.profil==='manager'" class="nav-item">
+        <a class="nav-link collapsed" >
+          <i class="bi bi-grid"></i>
+          <span>Statistiques</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      
+      <li *ngIf="user.profil==='employe'" class="nav-item">
+        <a class="nav-link collapsed" [routerLink]="['/employee/profil_employe']">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li *ngIf="user.profil==='employe'" class="nav-item">
+        <a class="nav-link collapsed" [routerLink]="['/employee/liste_rd']">
+          <i class="bi bi-layout-text-window-reverse"></i>
+          <span>Liste Rendez-vous</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li *ngIf="user.profil==='employe'" class="nav-item">
+        <a class="nav-link collapsed" [routerLink]="['/employee/tache_effectue']">
+          <i class="bi bi-journal-text"></i>
+          <span>Tâches éffectués</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li *ngIf="user.profil==='manager'" class="nav-item">
+        <a class="nav-link collapsed" [routerLink]="['/manager/personnel']">
+          <i class="bi bi-card-list"></i>
+          <span>Gestion Personnel</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li *ngIf="user.profil==='manager'" class="nav-item">
+        <a class="nav-link collapsed" [routerLink]="['/manager/service']">
+          <i class="bi bi-journal-text"></i>
+          <span>Gestion Service</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li *ngIf="user.profil==='manager'" class="nav-item">
+        <a class="nav-link collapsed" [routerLink]="['/manager/contact']">
+          <i class="bi bi-envelope"></i>
+          <span>Offre Spéciale</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" (click)="deconnecte()">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>Sign Out</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->

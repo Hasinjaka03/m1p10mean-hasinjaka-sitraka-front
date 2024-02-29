@@ -1,0 +1,31 @@
+.width_form {
+    width: 700px;
+}
+
+@media (max-width:700px)  {
+    .width_form {
+        width: 100%;
+    }
+    
+}
+
+.color_text {
+    color: blue;
+}
+
+.drop-area {
+    width: 150px; 
+    height: 150px; 
+    border: 2px dashed gray;
+    /* margin-left: 12px; */
+}
+.image-class {
+    width: 150px; 
+    height: 150px;
+    /* margin-right: 6px; */
+    /* border: 2px ;  */
+}
+.tab-image {
+    width: 100px; 
+    height: 100px;
+}

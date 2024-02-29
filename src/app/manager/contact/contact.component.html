@@ -1,0 +1,56 @@
+<app-header [user]="user"></app-header>
+
+<main id="main" class="main">
+
+    <div class="pagetitle text-center">
+      <h1>Contact client pour Offre spéciale</h1>
+      
+    </div><!-- End Page Title -->
+    <br><br>
+
+    <section class="section contact d-flex flex-column align-items-center justify-content-center">
+
+      <div class="row gy-4">
+
+
+        <div class="longeur">
+          <div class="card  p-4">
+            <form (submit)="submitForm()" #insertionForm ="ngForm" class="php-email-form">
+              <div class="row gy-4">
+
+              <div class="col-md-12 selection">
+                    <select  class="form-select" aria-label="Default select example" name = "clientmail"  [(ngModel)]="insertEmail.clientmail"  >               
+                      <option *ngFor="let client of clients;"  [value]="client._id" selected>{{client.nom}}&nbsp;{{ client.prenom }}</option>
+                    </select>
+              </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" [(ngModel)]="insertEmail.subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" [(ngModel)]="insertEmail.message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit" [disabled]="insertionForm.invalid">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main><!-- End #main -->
+
+<app-footer></app-footer>
+
