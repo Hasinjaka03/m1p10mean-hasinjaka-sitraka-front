@@ -1,0 +1,10 @@
+.footer {
+    padding: 20px 0; /* Espacement intérieur */
+    text-align: center; /* Centrage horizontal du contenu */
+  }
+  
+  .container-fluid {
+    max-width: 1200px; /* Largeur maximale du conteneur */
+    margin: 0 auto; /* Centrage horizontal du conteneur */
+  }
+  

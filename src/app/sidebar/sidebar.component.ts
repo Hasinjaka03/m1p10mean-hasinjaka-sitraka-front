@@ -9,9 +9,9 @@ export interface RouteInfo {
 }
 
 export const ROUTES_MANAGER: RouteInfo[] = [
-    { path: '/insert_depense',    title: 'Ajouter Depense',        icon:'nc-favourite-28', class: '' },
-    { path: '/liste_depense',    title: 'Liste Depense',        icon:'nc-favourite-28', class: '' },
-    { path: '/liste_employe',    title: 'Liste Employe',        icon:'nc-favourite-28', class: '' },
+    { path: '/insert_depense',    title: 'Ajouter Depense',        icon:'nc-money-coins', class: '' },
+    { path: '/liste_depense',    title: 'Liste Depense',        icon:'nc-money-coins', class: '' },
+    { path: '/liste_employe',    title: 'STATISTIQUE',        icon:'nc-chart-bar-32', class: '' },
         // { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
 
     // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
