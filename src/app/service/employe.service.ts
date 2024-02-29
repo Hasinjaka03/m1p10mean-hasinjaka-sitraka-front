@@ -15,7 +15,7 @@ export class EmployeService {
 
   private baseUrl = apiUrl + '/manager'; // L'URL de votre API
 
-  private url ='http://localhost:3000/manager/employe';
+  private url = apiUrl + '/manager/employe';
 
   constructor(private http: HttpClient) { }
 

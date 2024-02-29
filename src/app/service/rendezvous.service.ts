@@ -45,13 +45,13 @@ export class RendezvousService {
 
   
   getListRendezVous(idEmploye:string): Observable<any[]> {
-    this.baseUrl='http://localhost:3000/employe/rendezvous/getAll/'+idEmploye ;
+    this.baseUrl= apiUrl+'/employe/rendezvous/getAll/'+idEmploye ;
     // console.log(this.baseUrl);
     return this.http.get<any[]>(this.baseUrl);
   }
 
   updateEtatRD(idEmploye:string,idRendezVous:string): Observable<any[]> {
-    this.baseUrl='http://localhost:3000/employe/rendezvous/getAll/'+idEmploye+'/'+idRendezVous ;
+    this.baseUrl=apiUrl+'/employe/rendezvous/getAll/'+idEmploye+'/'+idRendezVous ;
     const etat: boolean = true ;
     const body = { etat } ;
     console.log(this.baseUrl);
