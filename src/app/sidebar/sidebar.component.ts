@@ -26,6 +26,13 @@ export const ROUTES_CLIENT: RouteInfo[] = [
     { path: '/insert_preference',    title: 'Ajouter Preference',        icon:'nc-favourite-28', class: '' },
 ];
 
+export const ROUTES_EMPLOYEE: RouteInfo[] = [
+
+    { path: '/liste_rd',    title: 'Liste Rendez-vous',        icon:'nc-watch-time', class: '' },
+    { path: '/profil_employe',    title: 'Profil',        icon:'nc-watch-time', class: '' },
+    { path: '/tache_effectue',    title: 'Tache Effectue',        icon:'nc-favourite-28', class: '' },
+];
+
 export let ROUTES: RouteInfo[];
 
 @Component({
@@ -35,15 +42,27 @@ export let ROUTES: RouteInfo[];
 
 export class SidebarComponent implements OnInit {
     public menuItems: any[]=[];
+    public profil: string=''
     ngOnInit() {
         const clientDataString = localStorage.getItem('utilisateur');
         const clientData = JSON.parse(clientDataString);
+        this.profil=clientData.profil;
         if(clientData.profil==='manager'){
             ROUTES=ROUTES_MANAGER;
         }
-        else{
+        else if(clientData.profil==='client'){
             ROUTES=ROUTES_CLIENT;
         }
-        this.menuItems = ROUTES.filter(menuItem => menuItem);
+        else{
+            this.profil='employee'
+            ROUTES=ROUTES_EMPLOYEE;
+        }
+        // this.menuItems = ROUTES.filter(menuItem => menuItem);
+        this.menuItems = ROUTES.map(item => {
+            return {
+              ...item,
+              path: this.profil+ '/' + item.path
+            };
+          });
     }
 }

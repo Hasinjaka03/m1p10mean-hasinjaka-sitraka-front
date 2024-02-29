@@ -16,8 +16,8 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'inscription', component: InscriptionComponent},
   { path: '', component: ClientLayoutComponent, children: [{path: 'client',loadChildren: () => import('./layouts/client-layout/client-layout.module').then(x => x.ClientLayoutModule)}]},
-  { path: '', component: ManagerLayoutComponent, children: [{path: '',loadChildren: () => import('./layouts/manager-layout/manager-layout.module').then(x => x.ManagerLayoutModule)}]},
-  { path: '', component: EmployeeLayoutComponent, children: [{path: '',loadChildren: () => import('./layouts/employee-layout/employee-layout.module').then(x => x.EmployeeLayoutModule )}]},
+  { path: '', component: ManagerLayoutComponent, children: [{path: 'manager',loadChildren: () => import('./layouts/manager-layout/manager-layout.module').then(x => x.ManagerLayoutModule)}]},
+  { path: '', component: EmployeeLayoutComponent, children: [{path: 'employee',loadChildren: () => import('./layouts/employee-layout/employee-layout.module').then(x => x.EmployeeLayoutModule )}]},
   { path: '**', redirectTo: 'login' }
 ]
 
