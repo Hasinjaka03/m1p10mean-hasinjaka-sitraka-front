@@ -20,7 +20,7 @@ export class EmployeService {
   constructor(private http: HttpClient) { }
 
   getEmployeeListe(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/liste_employe`);
+    return this.http.get<any[]>(`${this.baseUrl}/employe/getAll`);
   }
 
   statistiqueEmploye(id_employe: string): Observable<any[]> {

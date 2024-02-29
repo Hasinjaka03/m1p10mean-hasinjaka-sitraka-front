@@ -11,12 +11,12 @@ const apiUrl = environment.apiUrl;
 })
 export class ServiceService {
 
-  private baseUrl = apiUrl + '/manager/listeService/'; // L'URL de votre API
+  private baseUrl = apiUrl + '/manager/service'; // L'URL de votre API
 
   constructor(private http: HttpClient) { }
 
   getServiceListe(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}`);
+    return this.http.get<any[]>(`${this.baseUrl}/listeService`);
   //   const services=[
   //   {
   //       _id:'ajdsfli23',
