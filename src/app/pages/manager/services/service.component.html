@@ -23,7 +23,7 @@
         <div class="row mb-3">
           <label for="inputPassword3" class="col-sm-3 col-form-label">Prix (Ar)</label>
           <div class="col-sm-8">
-            <input type="number" step="any" class="form-control" id="inputPassword" name="prix" [(ngModel)]="inputService.prix" required>
+            <input type="number" step="any" class="form-control" id="inputPassword" name="prix" [(ngModel)]="inputService.tarif" required>
           </div>
         </div>
         <div class="row mb-3">
@@ -68,8 +68,8 @@
           <tr *ngFor="let service of services; let i=index">
             <th scope="row">{{i+1}}</th>
             <td>{{service.nom}}</td>
-            <td>{{service.duree | heure }}</td>
-            <td>{{service.prix}} Ar</td>
+            <td>{{service.duree}}</td>
+            <td>{{service.tarif}} Ar</td>
             <td>{{service.commission}} %</td>
             <td><button (click)="ismodified(service)" class="btn btn-primary rounded-pill">Modifier</button></td>
             <td><button (click)="supprimerService(service._id)" class="btn btn-success rounded-pill">Supprimer</button></td>
@@ -84,4 +84,4 @@
   </section>
 
 </main>     
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

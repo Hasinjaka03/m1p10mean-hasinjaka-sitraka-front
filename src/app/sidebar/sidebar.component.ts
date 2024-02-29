@@ -12,9 +12,9 @@ export const ROUTES_MANAGER: RouteInfo[] = [
     { path: '/insert_depense',    title: 'Ajouter Depense',        icon:'nc-money-coins', class: '' },
     { path: '/liste_depense',    title: 'Liste Depense',        icon:'nc-money-coins', class: '' },
     { path: '/liste_employe',    title: 'Statistique',        icon:'nc-chart-bar-32', class: '' },
-    { path: '/personnel',    title: 'Gestion Personnel',        icon:'nc-chart-bar-32', class: '' },
-    { path: '/service',    title: 'Gestion Service',        icon:'nc-chart-bar-32', class: '' },
-    { path: '/contact',    title: 'Contact',        icon:'nc-chart-bar-32', class: '' },
+    { path: '/personnel',    title: 'Gestion Personnel',        icon:'nc-badge', class: '' },
+    { path: '/service',    title: 'Gestion Service',        icon:'nc-single-copy-04', class: '' },
+    { path: '/contact',    title: 'Contact',        icon:'nc-single-02', class: '' },
     
 ];
 
@@ -29,8 +29,8 @@ export const ROUTES_CLIENT: RouteInfo[] = [
 export const ROUTES_EMPLOYEE: RouteInfo[] = [
 
     { path: '/liste_rd',    title: 'Liste Rendez-vous',        icon:'nc-watch-time', class: '' },
-    { path: '/profil_employe',    title: 'Profil',        icon:'nc-watch-time', class: '' },
-    { path: '/tache_effectue',    title: 'Tache Effectue',        icon:'nc-favourite-28', class: '' },
+    { path: '/profil_employe',    title: 'Profil',        icon:'nc-single-02', class: '' },
+    { path: '/tache_effectue',    title: 'Tache Effectue',        icon:'nc-check-2', class: '' },
 ];
 
 export let ROUTES: RouteInfo[];

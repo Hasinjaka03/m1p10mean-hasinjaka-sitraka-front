@@ -42,7 +42,8 @@ export class NavbarComponent implements OnInit{
               return this.listTitles[item].title;
           }
       }
-      return 'HOME';
+      const utilisateur= JSON.parse(localStorage.getItem('utilisateur'))
+      return utilisateur.profil;
     }
     sidebarToggle() {
         if (this.sidebarVisible === false) {
