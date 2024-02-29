@@ -55,5 +55,4 @@ export class ServiceService {
     const url : string = apiUrl+"/manager/service/update/"+idservice ;
     return this.http.patch(url, body);
   }  
-
 }
