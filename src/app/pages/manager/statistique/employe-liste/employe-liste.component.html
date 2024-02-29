@@ -83,3 +83,21 @@
   </tbody>
 </table>
 
+
+<h3>BENEFICE</h3>
+<table class="employe-table">
+  <thead>
+    <tr>
+      <th>Jour</th>
+      <th *ngFor="let benefice of benefices">{{ benefice._id }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >
+      <td>Montant</td>
+      <td *ngFor="let benefice of benefices">{{ benefice.profit }} </td>
+      <!-- <td><a routerLink="/statistique/employe/{{employee._id}}">VOIR STATISTIQUE</a></td> -->
+    </tr>
+  </tbody>
+</table>
+

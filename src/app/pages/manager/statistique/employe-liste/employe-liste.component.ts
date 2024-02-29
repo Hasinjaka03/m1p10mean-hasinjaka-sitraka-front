@@ -18,6 +18,7 @@ export class EmployeListeComponent implements OnInit {
   rendezvousjournalier: any[] =[];
   chiffreaffairejours: any[]=[];
   chiffreaffairemois: any[]=[];
+  benefices: any[]=[];
 
   constructor(private rendezvousService : RendezvousService, private employeService: EmployeService,private router: Router , private route : ActivatedRoute) { }
 
@@ -29,6 +30,7 @@ export class EmployeListeComponent implements OnInit {
     this.getRendezvousJournalier();
     this.getChiffreAffaireJour();
     this.getChiffreAffaireMois();
+    this.getBenefice();
   }
 
   getemployees(): void {
@@ -99,12 +101,24 @@ export class EmployeListeComponent implements OnInit {
       }
     );
   }
+  getBenefice(){
+    this.rendezvousService.getBenefice(this.annee).subscribe(
+      data => {
+        console.log(data)
+        this.benefices=data;
+      },
+      error => {
+        console.error('Error fetching chiffre affaire time:', error);
+      }
+    );
+  }
 
   updatestat(){
     this.getAverageWorkTime();
     this.getRendezvousJournalier();
     this.getChiffreAffaireJour();
     this.getChiffreAffaireMois();
+    this.getBenefice();
   }
 
 }

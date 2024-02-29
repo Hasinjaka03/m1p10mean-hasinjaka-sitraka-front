@@ -39,6 +39,9 @@ export class RendezvousService {
   getChiffreAffaire(mois: string, annee: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/manager/statistique/rendezvous/chiffreaffaire?mois=${mois}&annee=${annee}`, {});
   }
+  getBenefice( annee: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/manager/statistique/rendezvous/benefice?annee=${annee}`, {});
+  }
 
   
 }
