@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Utilisateur } from 'src/app/models/utilisateur';
-import { ClientService } from 'src/app/service/client.service';
-import { LoginService } from 'src/app/service/login-admin.service';
+import { Utilisateur } from 'app/models/utilisateur';
+import { ClientService } from 'app/service/client.service';
+import { LoginService } from 'app/service/login-admin.service';
+
 
 @Component({
   selector: 'app-contact',

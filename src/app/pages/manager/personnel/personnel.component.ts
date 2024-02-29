@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Utilisateur } from 'src/app/models/utilisateur';
-import { EmployeService } from 'src/app/service/employe.service';
-import { LoginService } from 'src/app/service/login-admin.service';
+import { Utilisateur } from 'app/models/utilisateur';
+import { EmployeService } from 'app/service/employe.service';
+import { LoginService } from 'app/service/login-admin.service';
 
 @Component({
   selector: 'app-personnel',

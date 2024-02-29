@@ -1,8 +1,8 @@
 import { Component, OnInit , Input } from '@angular/core';
-import { UtilisateurService } from 'src/app/employe-liste/employ-liste.service';
-import { Utilisateur } from 'src/app/models/utilisateur';
-import { LoginService } from 'src/app/service/login-admin.service';
+
 import { Router } from '@angular/router';
+import { Utilisateur } from 'app/models/utilisateur';
+import { LoginService } from 'app/service/login-admin.service';
 
 @Component({
   selector: 'app-header',

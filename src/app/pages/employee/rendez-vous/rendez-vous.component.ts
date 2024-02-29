@@ -1,8 +1,8 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Utilisateur } from 'src/app/models/utilisateur';
-import { LoginService } from 'src/app/service/login-admin.service';
-import { RendezvousService } from 'src/app/service/rendezvous.service';
+import { Utilisateur } from 'app/models/utilisateur';
+import { LoginService } from 'app/service/login-admin.service';
+import { RendezvousService } from 'app/service/rendezvous.service';
+
 
 @Component({
   selector: 'app-rendez-vous',

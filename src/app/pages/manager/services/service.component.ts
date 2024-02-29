@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Utilisateur } from 'src/app/models/utilisateur';
-import { LoginService } from 'src/app/service/login-admin.service';
-import { ServiceService } from 'src/app/service/service.service';
+import { Utilisateur } from 'app/models/utilisateur';
+import { LoginService } from 'app/service/login-admin.service';
+import { ServiceService } from 'app/service/service.service';
+
 
 
 
