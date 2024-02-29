@@ -17,7 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ManagerLayoutComponent } from './layouts/manager-layout/manager-layout.component';
-import { EmployeeLayoutComponent } from './layouts/employe-layout/employee-layout.component';
+import { EmployeeLayoutComponent } from './layouts/employee-layout/employee-layout.component';
 
 
 

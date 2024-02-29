@@ -27,4 +27,4 @@ import { RendezVousComponent } from 'app/pages/employee/rendez-vous/rendez-vous.
    
   ]
 })
-export class EmployeeModule { }
+export class EmployeeLayoutModule { }
